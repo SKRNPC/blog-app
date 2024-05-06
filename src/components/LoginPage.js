@@ -7,13 +7,13 @@ function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
   return (
     <div
-      className=" d-flex align-items-center "
+      className=" d-flex align-items-center p-3  "
       style={{ minHeight: "100vh", backgroundColor: "#E2D6D6" }}
     >
-      <div className="container w-50 align-items-center p-5  bg-light rounded-3">
-        <img src={UserSvg} alt="icon" className="d-flex mx-auto" />
-        <form className=" p-5 ">
-          <div className="mb-3 mx-5">
+      <div className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 bg-light rounded-3">
+        <img src={UserSvg} alt="icon" className="d-flex mx-auto mb-4 mt-4 " />
+        <form className=" p-xl-5 p-md-2 p-sm-0  ">
+          <div className=" mb-3 mx-md-5 mx-sm-auto mx-auto">
             <input
               type="email"
               className="form-control form-control-lg custom-input"
@@ -22,7 +22,7 @@ function LoginPage() {
             />
           </div>
           <div
-            className="mb-3 mx-5 d-flex flex-row align-items-center rounded-3 "
+            className="mb-3 mx-md-5 mx-sm-auto mx-auto d-flex flex-row align-items-center rounded-3 "
             style={{ backgroundColor: "#E2D6D6" }}
           >
             <input
@@ -39,7 +39,7 @@ function LoginPage() {
               {isVisible ? <EyeSvg /> : <EyeClosedSvg />}
             </div>
           </div>
-          <div className="mb-3 form-check mx-5">
+          <div className="mb-3 mx-md-5 mx-sm-auto mx-auto form-check">
             <input
               type="checkbox"
               className="form-check-input custom-input"
@@ -49,7 +49,7 @@ function LoginPage() {
               Remember me
             </label>
           </div>
-          <div className="row mx-5 mb-3">
+          <div className="row mb-3 mx-md-5 mx-sm-auto mx-auto">
             <button
               type="submit"
               className="btn btn-lg btn-block  text-white"
@@ -58,7 +58,7 @@ function LoginPage() {
               Login
             </button>
           </div>
-          <div className="row mx-5 ">
+          <div className="row mx-md-5 mx-sm-auto mx-0 ">
             <p className="d-flex justify-content-center text-sm-center  ">
               Don't have an account?&nbsp;
               <a href="/signup" className="signup-link">

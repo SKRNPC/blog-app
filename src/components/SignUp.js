@@ -11,12 +11,12 @@ function SignUp() {
     useState(false);
   return (
     <div
-      className=" d-flex align-items-center "
+      className=" d-flex align-items-center p-3 "
       style={{ minHeight: "100vh", backgroundColor: "#E2D6D6" }}
     >
-      <div className="container w-50 align-items-center p-5  bg-light rounded-3">
-        <form className="p-5">
-          <div className="mb-4 mx-5 text-center ">
+      <div className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 bg-light rounded-3">
+        <form className="p-xl-5 p-md-2 p-sm-2">
+          <div className="mb-4 mx-5 text-center mt-4 ">
             <h2>Sign Up</h2>
             <p className="mb-4 text-sm-center ">Create your account</p>
           </div>
