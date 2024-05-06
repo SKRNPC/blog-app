@@ -97,7 +97,7 @@ function SignUp() {
               <p className="d-flex justify-content-center text-sm-center  ">
                 Already have an account?&nbsp;
                 <Link to="/login" className="signup-link">
-                  <p>Sign up now</p>
+                  <p>Login</p>
                 </Link>
               </p>
             </div>
