@@ -4,6 +4,7 @@ import { ReactComponent as PasswordSvg } from "../images/icons/password-duotone.
 import { ReactComponent as EyeClosedSvg } from "../images/icons/eye-closed-duotone.svg";
 import { ReactComponent as EyeSvg } from "../images/icons/eye-duotone.svg";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function SignUp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -95,9 +96,9 @@ function SignUp() {
             <div className="row mx-auto ">
               <p className="d-flex justify-content-center text-sm-center  ">
                 Already have an account?&nbsp;
-                <a href="/login" className="signup-link">
-                  Login
-                </a>
+                <Link to="/login" className="signup-link">
+                  <p>Sign up now</p>
+                </Link>
               </p>
             </div>
           </div>
