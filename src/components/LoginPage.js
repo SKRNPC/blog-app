@@ -35,7 +35,7 @@ function LoginPage() {
               Remember me
             </label>
           </div>
-          <div className="row mx-5">
+          <div className="row mx-5 mb-3">
             <button
               type="submit"
               className="btn btn-lg btn-block  text-white"
@@ -43,6 +43,14 @@ function LoginPage() {
             >
               Login
             </button>
+          </div>
+          <div className="row mx-5 ">
+            <p className="d-flex justify-content-center text-sm-center  ">
+              Don't have an account?&nbsp;
+              <a href="/signup" className="signup-link">
+                Sign up now
+              </a>
+            </p>
           </div>
         </form>
       </div>

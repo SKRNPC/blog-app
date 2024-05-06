@@ -12,3 +12,7 @@
 .form-check-input:not(:checked) {
   background-color:  #E2D6D6;
 }
+.signup-link {
+  text-decoration: none;
+  color: #9B6262;
+}
