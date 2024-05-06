@@ -6,6 +6,10 @@ import { Link } from "react-router-dom";
 
 function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  console.log(email, password);
   return (
     <div
       className=" d-flex align-items-center p-3  "
@@ -20,6 +24,7 @@ function LoginPage() {
               className="form-control form-control-lg custom-input"
               placeholder="Email"
               style={{ backgroundColor: "#E2D6D6" }}
+              onChange={(event) => setEmail(event.target.value)}
             />
           </div>
           <div
@@ -31,6 +36,7 @@ function LoginPage() {
               className="form-control form-control-lg custom-input"
               placeholder="Password"
               style={{ backgroundColor: "#E2D6D6", border: "none" }}
+              onChange={(event) => setPassword(event.target.value)}
             />
             <div
               onClick={() => setIsVisible(!isVisible)}

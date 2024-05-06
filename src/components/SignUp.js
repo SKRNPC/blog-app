@@ -10,6 +10,10 @@ function SignUp() {
   const [isVisible, setIsVisible] = useState(false);
   const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
     useState(false);
+  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordRepeat, setPasswordRepeat] = useState("");
   return (
     <div
       className=" d-flex align-items-center p-3 "
@@ -29,6 +33,7 @@ function SignUp() {
                 className="form-control form-control-lg custom-input ms-2 "
                 placeholder="Username"
                 style={{ backgroundColor: "#E2D6D6" }}
+                onChange={(event) => setUsername(event.target.value)}
               />
             </div>
             <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
@@ -38,6 +43,7 @@ function SignUp() {
                 className="form-control form-control-lg custom-input ms-2 "
                 placeholder="Email"
                 style={{ backgroundColor: "#E2D6D6" }}
+                onChange={(event) => setEmail(event.target.value)}
               />
             </div>
             <div className="mb-4 mx-3 d-flex flex-row align-items-center">
@@ -51,6 +57,7 @@ function SignUp() {
                   className="form-control form-control-lg custom-input "
                   placeholder="Password"
                   style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                  onChange={(event) => setPassword(event.target.value)}
                 />
                 <div
                   onClick={() => setIsVisible(!isVisible)}
@@ -72,6 +79,7 @@ function SignUp() {
                   className="form-control form-control-lg custom-input "
                   placeholder="Confirm Password"
                   style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                  onChange={(event) => setPasswordRepeat(event.target.value)}
                 />
                 <div
                   onClick={() =>
