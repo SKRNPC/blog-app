@@ -51,11 +51,11 @@ function SignUp() {
                 style={{ backgroundColor: "#E2D6D6" }}
               />
             </div>
-            <div className="mb-2 d-flex justify-content-center">
+            <div className="mx-3 mb-2 d-flex justify-content-end">
               <button
                 type="submit"
                 className="btn btn-lg  text-white "
-                style={{ backgroundColor: "#9B6262", width: "50%" }}
+                style={{ backgroundColor: "#9B6262", width: "100%" }}
               >
                 Sign Up
               </button>
