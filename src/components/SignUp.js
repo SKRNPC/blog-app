@@ -1,8 +1,14 @@
 import { ReactComponent as UserSvg } from "../images/icons/user.svg";
 import { ReactComponent as EmailSvg } from "../images/icons/email.svg";
 import { ReactComponent as PasswordSvg } from "../images/icons/password-duotone.svg";
+import { ReactComponent as EyeClosedSvg } from "../images/icons/eye-closed-duotone.svg";
+import { ReactComponent as EyeSvg } from "../images/icons/eye-duotone.svg";
+import { useState } from "react";
 
 function SignUp() {
+  const [isVisible, setIsVisible] = useState(false);
+  const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
+    useState(false);
   return (
     <div
       className=" d-flex align-items-center "
@@ -35,21 +41,47 @@ function SignUp() {
             </div>
             <div className="mb-4 mx-3 d-flex flex-row align-items-center">
               <PasswordSvg />
-              <input
-                type="password"
-                className="form-control form-control-lg custom-input ms-2"
-                placeholder="Password"
-                style={{ backgroundColor: "#E2D6D6" }}
-              />
+              <div
+                className="d-flex flex-row align-items-center ms-2 rounded-3 "
+                style={{ backgroundColor: "#E2D6D6", width: "100%" }}
+              >
+                <input
+                  type={isVisible ? "text" : "password"}
+                  className="form-control form-control-lg custom-input "
+                  placeholder="Password"
+                  style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                />
+                <div
+                  onClick={() => setIsVisible(!isVisible)}
+                  className="mx-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  {isVisible ? <EyeSvg /> : <EyeClosedSvg />}
+                </div>
+              </div>
             </div>
             <div className="mb-4 mx-3 d-flex flex-row align-items-center">
               <PasswordSvg />
-              <input
-                type="password"
-                className="form-control form-control-lg custom-input ms-2"
-                placeholder="Confirm Password"
-                style={{ backgroundColor: "#E2D6D6" }}
-              />
+              <div
+                className="d-flex flex-row align-items-center ms-2 rounded-3"
+                style={{ backgroundColor: "#E2D6D6", width: "100%" }}
+              >
+                <input
+                  type={isVisibleConfirmPassword ? "text" : "password"}
+                  className="form-control form-control-lg custom-input "
+                  placeholder="Confirm Password"
+                  style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                />
+                <div
+                  onClick={() =>
+                    setIsVisibleConfirmPassword(!isVisibleConfirmPassword)
+                  }
+                  className="mx-2"
+                  style={{ cursor: "pointer" }}
+                >
+                  {isVisibleConfirmPassword ? <EyeSvg /> : <EyeClosedSvg />}
+                </div>
+              </div>
             </div>
             <div className="mx-3 mb-2 d-flex justify-content-end">
               <button

@@ -1,6 +1,10 @@
 import UserSvg from "../images/icons/user-duotone.svg";
+import { ReactComponent as EyeClosedSvg } from "../images/icons/eye-closed-duotone.svg";
+import { ReactComponent as EyeSvg } from "../images/icons/eye-duotone.svg";
+import { useState } from "react";
 
 function LoginPage() {
+  const [isVisible, setIsVisible] = useState(false);
   return (
     <div
       className=" d-flex align-items-center "
@@ -17,13 +21,23 @@ function LoginPage() {
               style={{ backgroundColor: "#E2D6D6" }}
             />
           </div>
-          <div className="mb-3 mx-5">
+          <div
+            className="mb-3 mx-5 d-flex flex-row align-items-center rounded-3 "
+            style={{ backgroundColor: "#E2D6D6" }}
+          >
             <input
-              type="password"
+              type={isVisible ? "text" : "password"}
               className="form-control form-control-lg custom-input"
               placeholder="Password"
-              style={{ backgroundColor: "#E2D6D6" }}
+              style={{ backgroundColor: "#E2D6D6", border: "none" }}
             />
+            <div
+              onClick={() => setIsVisible(!isVisible)}
+              className="mx-2"
+              style={{ cursor: "pointer" }}
+            >
+              {isVisible ? <EyeSvg /> : <EyeClosedSvg />}
+            </div>
           </div>
           <div className="mb-3 form-check mx-5">
             <input
