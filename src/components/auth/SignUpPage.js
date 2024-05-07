@@ -19,12 +19,12 @@ function SignUp() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = {
-      username,
-      email,
-      password,
-      role: "BLOGGER",
-    };
+    // const payload = {
+    //   username,
+    //   email,
+    //   password,
+    //   role: "BLOGGER",
+    // };
     try {
       navigation("/login");
     } catch (error) {}

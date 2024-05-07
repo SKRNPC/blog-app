@@ -14,10 +14,10 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const payload = {
-      email,
-      password,
-    };
+    // const payload = {
+    //   email,
+    //   password,
+    // };
     try {
       navigation("/home");
     } catch (error) {}
