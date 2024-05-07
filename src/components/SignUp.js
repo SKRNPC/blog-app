@@ -13,7 +13,9 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [passwordRepeat, setPasswordRepeat] = useState("");
+  // const [passwordRepeat, setPasswordRepeat] = useState("");
+
+  const handleSubmit = () => {};
   return (
     <div
       className=" d-flex align-items-center p-3 "
@@ -68,7 +70,7 @@ function SignUp() {
                 </div>
               </div>
             </div>
-            <div className="mb-4 mx-3 d-flex flex-row align-items-center">
+            {/* <div className="mb-4 mx-3 d-flex flex-row align-items-center">
               <PasswordSvg />
               <div
                 className="d-flex flex-row align-items-center ms-2 rounded-3"
@@ -91,12 +93,13 @@ function SignUp() {
                   {isVisibleConfirmPassword ? <EyeSvg /> : <EyeClosedSvg />}
                 </div>
               </div>
-            </div>
+            </div> */}
             <div className="mx-3 mb-2 d-flex justify-content-end">
               <button
                 type="submit"
                 className="btn btn-lg  text-white "
                 style={{ backgroundColor: "#9B6262", width: "100%" }}
+                onClick={handleSubmit}
               >
                 Sign Up
               </button>
@@ -105,7 +108,7 @@ function SignUp() {
               <p className="d-flex justify-content-center text-sm-center  ">
                 Already have an account?&nbsp;
                 <Link to="/login" className="signup-link">
-                  <p>Login</p>
+                  Login
                 </Link>
               </p>
             </div>

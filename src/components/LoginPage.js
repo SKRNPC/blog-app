@@ -69,7 +69,7 @@ function LoginPage() {
             <p className="d-flex justify-content-center text-sm-center  ">
               Don't have an account?&nbsp;
               <Link to="/signup" className="signup-link">
-                <p>Sign up now</p>
+                Sign up now
               </Link>
             </p>
           </div>
