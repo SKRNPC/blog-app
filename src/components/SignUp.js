@@ -8,21 +8,43 @@ import { Link } from "react-router-dom";
 
 function SignUp() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
-    useState(false);
+  // const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
+  //   useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [passwordRepeat, setPasswordRepeat] = useState("");
 
-  const handleSubmit = () => {};
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      username,
+      email,
+      password,
+      role: "BLOGGER",
+    };
+    try {
+      handleClear();
+    } catch (error) {}
+  };
+
+  const handleClear = () => {
+    setUsername("");
+    setEmail("");
+    setPassword("");
+  };
+
   return (
     <div
       className=" d-flex align-items-center p-3 "
       style={{ minHeight: "100vh", backgroundColor: "#E2D6D6" }}
     >
       <div className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 bg-light rounded-3">
-        <form className="p-xl-5 p-md-2 p-sm-2">
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className="p-xl-5 p-md-2 p-sm-2"
+        >
           <div className="mb-4 mx-5 text-center mt-4 ">
             <h2>Sign Up</h2>
             <p className="mb-4 text-sm-center ">Create your account</p>
@@ -31,21 +53,23 @@ function SignUp() {
             <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
               <UserSvg />
               <input
+                value={username}
                 type="text"
                 className="form-control form-control-lg custom-input ms-2 "
                 placeholder="Username"
                 style={{ backgroundColor: "#E2D6D6" }}
-                onChange={(event) => setUsername(event.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
               <EmailSvg />
               <input
+                value={email}
                 type="email"
                 className="form-control form-control-lg custom-input ms-2 "
                 placeholder="Email"
                 style={{ backgroundColor: "#E2D6D6" }}
-                onChange={(event) => setEmail(event.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
             <div className="mb-4 mx-3 d-flex flex-row align-items-center">
@@ -55,6 +79,7 @@ function SignUp() {
                 style={{ backgroundColor: "#E2D6D6", width: "100%" }}
               >
                 <input
+                  value={password}
                   type={isVisible ? "text" : "password"}
                   className="form-control form-control-lg custom-input "
                   placeholder="Password"
@@ -99,7 +124,6 @@ function SignUp() {
                 type="submit"
                 className="btn btn-lg  text-white "
                 style={{ backgroundColor: "#9B6262", width: "100%" }}
-                onClick={handleSubmit}
               >
                 Sign Up
               </button>

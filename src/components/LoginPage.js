@@ -9,6 +9,23 @@ function LoginPage() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const payload = {
+      email,
+      password,
+    };
+    try {
+      handleClear();
+    } catch (error) {}
+  };
+
+  const handleClear = () => {
+    setEmail("");
+    setPassword("");
+  };
+
   console.log(email, password);
   return (
     <div
@@ -17,14 +34,18 @@ function LoginPage() {
     >
       <div className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 bg-light rounded-3">
         <img src={UserSvg} alt="icon" className="d-flex mx-auto mb-4 mt-4 " />
-        <form className=" p-xl-5 p-md-2 p-sm-0  ">
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className=" p-xl-5 p-md-2 p-sm-0  "
+        >
           <div className=" mb-3 mx-md-5 mx-sm-auto mx-auto">
             <input
+              value={email}
               type="email"
               className="form-control form-control-lg custom-input"
               placeholder="Email"
               style={{ backgroundColor: "#E2D6D6" }}
-              onChange={(event) => setEmail(event.target.value)}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div
@@ -32,11 +53,12 @@ function LoginPage() {
             style={{ backgroundColor: "#E2D6D6" }}
           >
             <input
+              value={password}
               type={isVisible ? "text" : "password"}
               className="form-control form-control-lg custom-input"
               placeholder="Password"
               style={{ backgroundColor: "#E2D6D6", border: "none" }}
-              onChange={(event) => setPassword(event.target.value)}
+              onChange={(e) => setPassword(e.target.value)}
             />
             <div
               onClick={() => setIsVisible(!isVisible)}
