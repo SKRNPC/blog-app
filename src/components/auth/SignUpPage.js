@@ -4,7 +4,7 @@ import { ReactComponent as PasswordSvg } from "../../images/icons/password-duoto
 import { ReactComponent as EyeClosedSvg } from "../../images/icons/eye-closed-duotone.svg";
 import { ReactComponent as EyeSvg } from "../../images/icons/eye-duotone.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function SignUp() {
   const [isVisible, setIsVisible] = useState(false);
@@ -14,6 +14,7 @@ function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // const [passwordRepeat, setPasswordRepeat] = useState("");
+  const navigation = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,14 +26,8 @@ function SignUp() {
       role: "BLOGGER",
     };
     try {
-      handleClear();
+      navigation("/login");
     } catch (error) {}
-  };
-
-  const handleClear = () => {
-    setUsername("");
-    setEmail("");
-    setPassword("");
   };
 
   return (

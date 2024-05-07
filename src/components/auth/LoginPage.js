@@ -2,13 +2,13 @@ import UserSvg from "../../images/icons/user-duotone.svg";
 import { ReactComponent as EyeClosedSvg } from "../../images/icons/eye-closed-duotone.svg";
 import { ReactComponent as EyeSvg } from "../../images/icons/eye-duotone.svg";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const navigation = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -18,6 +18,7 @@ function LoginPage() {
     };
     try {
       handleClear();
+      navigation("/");
     } catch (error) {}
   };
 
