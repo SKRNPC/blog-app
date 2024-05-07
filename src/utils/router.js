@@ -7,6 +7,10 @@ import SignUp from "../pages/sign-up";
 export const router = createBrowserRouter([
   {
     path: "/",
+    element: <Login />,
+  },
+  {
+    path: "/home",
     element: <Home />,
   },
   {

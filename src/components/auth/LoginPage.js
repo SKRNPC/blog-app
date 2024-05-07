@@ -19,14 +19,8 @@ function LoginPage() {
       password,
     };
     try {
-      handleClear();
-      navigation("/");
+      navigation("/home");
     } catch (error) {}
-  };
-
-  const handleClear = () => {
-    setEmail("");
-    setPassword("");
   };
 
   console.log(email, password);
