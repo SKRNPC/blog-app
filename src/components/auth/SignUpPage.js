@@ -31,7 +31,7 @@ function SignUp() {
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className="p-xl-5 p-md-2 p-sm-2">
+    <form onSubmit={(e) => handleSubmit(e)} className="p-xl-5 p-md-2 p-sm-0">
       <div className="mb-4 mx-5 text-center mt-4 ">
         <h2>Sign Up</h2>
         <p className="mb-4 text-sm-center ">Create your account</p>
