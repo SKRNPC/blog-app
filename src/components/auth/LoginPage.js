@@ -39,7 +39,7 @@ function LoginPage() {
           <input
             value={email}
             type="email"
-            className="form-control form-control-lg custom-input ms-2"
+            className="form-control form-control-lg custom-input ms-2 rounded-0"
             placeholder="Email"
             style={{ backgroundColor: "#E2D6D6" }}
             onChange={(e) => setEmail(e.target.value)}
@@ -48,13 +48,13 @@ function LoginPage() {
         <div className="mb-3 mx-3 d-flex flex-row align-items-center">
           <PasswordSvg />
           <div
-            className="d-flex flex-row align-items-center ms-2 rounded-3"
+            className="d-flex flex-row align-items-center ms-2"
             style={{ backgroundColor: "#E2D6D6", width: "100%" }}
           >
             <input
               value={password}
               type={isVisible ? "text" : "password"}
-              className="form-control form-control-lg custom-input"
+              className="form-control form-control-lg custom-input rounded-0"
               placeholder="Password"
               style={{ backgroundColor: "#E2D6D6", border: "none" }}
               onChange={(e) => setPassword(e.target.value)}
@@ -71,7 +71,7 @@ function LoginPage() {
         <div className="mb-3 mx-5 w-50 ">
           <input
             type="checkbox"
-            className="form-check-input custom-input ms-2 "
+            className="form-check-input custom-input ms-2 rounded-0 "
             id="checkbox-login"
           />
           <label className="form-check-label ms-2 " htmlFor="checkbox-login">
@@ -81,7 +81,7 @@ function LoginPage() {
         <div className="mx-3 mb-2 d-flex justify-content-end">
           <button
             type="submit"
-            className="btn btn-lg  text-white"
+            className="btn rounded-0 btn-lg  text-white fw-bold"
             style={{ backgroundColor: "#9B6262", width: "100%" }}
           >
             Login
@@ -90,7 +90,7 @@ function LoginPage() {
         <div className="row mx-auto ">
           <p className="d-flex justify-content-center text-sm-center  ">
             Don't have an account?&nbsp;
-            <Link to="/signup" className="signup-link">
+            <Link to="/signup" className="signup-link fw-bold ">
               Sign up now
             </Link>
           </p>

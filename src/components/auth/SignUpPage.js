@@ -42,7 +42,7 @@ function SignUp() {
           <input
             value={username}
             type="text"
-            className="form-control form-control-lg custom-input ms-2 "
+            className="form-control form-control-lg custom-input ms-2 rounded-0 "
             placeholder="Username"
             style={{ backgroundColor: "#E2D6D6" }}
             onChange={(e) => setUsername(e.target.value)}
@@ -53,7 +53,7 @@ function SignUp() {
           <input
             value={email}
             type="email"
-            className="form-control form-control-lg custom-input ms-2 "
+            className="form-control form-control-lg custom-input ms-2 rounded-0 "
             placeholder="Email"
             style={{ backgroundColor: "#E2D6D6" }}
             onChange={(e) => setEmail(e.target.value)}
@@ -62,13 +62,13 @@ function SignUp() {
         <div className="mb-4 mx-3 d-flex flex-row align-items-center">
           <PasswordSvg />
           <div
-            className="d-flex flex-row align-items-center ms-2 rounded-3 "
+            className="d-flex flex-row align-items-center ms-2 "
             style={{ backgroundColor: "#E2D6D6", width: "100%" }}
           >
             <input
               value={password}
               type={isVisible ? "text" : "password"}
-              className="form-control form-control-lg custom-input "
+              className="form-control form-control-lg custom-input rounded-0 "
               placeholder="Password"
               style={{ backgroundColor: "#E2D6D6", border: "none" }}
               onChange={(event) => setPassword(event.target.value)}
@@ -109,7 +109,7 @@ function SignUp() {
         <div className="mx-3 mb-2 d-flex justify-content-end">
           <button
             type="submit"
-            className="btn btn-lg  text-white "
+            className="btn btn-lg  text-white rounded-0 "
             style={{ backgroundColor: "#9B6262", width: "100%" }}
           >
             Sign Up

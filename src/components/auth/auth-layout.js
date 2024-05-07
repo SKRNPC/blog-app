@@ -1,10 +1,13 @@
 function AuthLayout({ children }) {
   return (
     <div
-      className=" d-flex align-items-center p-3"
-      style={{ minHeight: "100vh", backgroundColor: "#F8F9FA" }}
+      className=" d-flex align-items-center p-3 bg-white"
+      style={{ minHeight: "100vh" }}
     >
-      <div className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 bg-white shadow rounded-5 border ">
+      <div
+        className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 shadow rounded-2 border border-3"
+        style={{ backgroundColor: "#f7ffe6" }}
+      >
         {children}
       </div>
     </div>
