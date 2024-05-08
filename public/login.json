@@ -1,0 +1,14 @@
+{
+  "isSuccess": true,
+  "message": "Login successful",
+  "data": {
+    "id": 14,
+    "username": "Daryl",
+    "email": "dixonn@gmail.com",
+    "role": "ADMIN",
+    "date_joined": "2024-04-17 11:33:32",
+    "is_active": true
+  },
+  "refresh": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTcxNTMzNzY3MiwiaWF0IjoxNzE1MDc4NDcyLCJqdGkiOiJjYmMwOTUxMjUzM2E0YTkxYTU3NGI2M2ZmZjJjMmFmZiIsInVzZXJfaWQiOjE0fQ.kcjX3MVpEM1bSLuoqliB7yNF9RWwBeEyEkAQMhZuOdw",
+  "access": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTAwMDcyLCJpYXQiOjE3MTUwNzg0NzIsImp0aSI6IjVhMDhjOGRlNjZiYzQ0ZDBiMzJlOTg3YmIwNjFjOWZhIiwidXNlcl9pZCI6MTR9.q07IW1WVCrKm_KFG3vCpJ-H1WRftkoe-P_2K-LARTyo"
+}

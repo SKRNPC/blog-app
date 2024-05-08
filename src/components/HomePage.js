@@ -6,14 +6,16 @@ function HomePage() {
   const [users, setUsers] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/home_active.json")
-      .then((response) => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("/home_active.json");
         setUsers(response.data.blogs);
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error("There was a problem with the Axios request:", error);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
   console.log(users.blogs);
   return (
