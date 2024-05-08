@@ -6,7 +6,7 @@ function AuthLayout({ children }) {
     >
       <div
         className="container col-xl-6 col-lg-8 col-sm-11 align-items-center p-xl-5 p-sm-4 shadow rounded-2 border border-3"
-        style={{ backgroundColor: "#f7ffe6" }}
+        style={{ backgroundColor: "#fff8f5" }}
       >
         {children}
       </div>

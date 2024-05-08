@@ -1,0 +1,386 @@
+{
+  "isSuccess": true,
+  "message": "Data retrieved successfully",
+  "blogs": [
+    {
+      "id": 3,
+      "blog_name": "Cake is a lie",
+      "article": "Portal oyunundaki en ikonik sözlerden.Bu sebeple aklımda kalmış",
+      "update_date": "2024-03-26T15:57:20.890488Z",
+      "active": true,
+      "created_date": "2024-03-26T15:57:20.890467Z",
+      "publish_date": "2024-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 5,
+      "blog_name": "Göçebe kuşlar",
+      "article": "bu kuşlar mevsimsel olarak belirli güzergahlarda hareket ederler....",
+      "update_date": "2024-03-26T20:23:40.828820Z",
+      "active": true,
+      "created_date": "2024-03-26T20:23:40.828699Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 6,
+      "blog_name": "Pikaçu",
+      "article": "pikaçular çok tatlı",
+      "update_date": "2024-03-26T21:34:17.244363Z",
+      "active": true,
+      "created_date": "2024-03-26T21:34:17.244330Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 7,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:30:35.501278Z",
+      "active": true,
+      "created_date": "2024-03-27T08:30:35.501186Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 8,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:37:35.024101Z",
+      "active": true,
+      "created_date": "2024-03-27T08:37:35.024079Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 9,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:37:46.167685Z",
+      "active": true,
+      "created_date": "2024-03-27T08:37:46.167623Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 10,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:44:20.153417Z",
+      "active": true,
+      "created_date": "2024-03-27T08:44:20.153407Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 11,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:44:23.876293Z",
+      "active": true,
+      "created_date": "2024-03-27T08:44:23.876277Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 12,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:44:26.817970Z",
+      "active": true,
+      "created_date": "2024-03-27T08:44:26.817948Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 13,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:46:48.040608Z",
+      "active": true,
+      "created_date": "2024-03-27T08:46:48.040600Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 14,
+      "blog_name": "Cockatiel",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T08:47:28.406580Z",
+      "active": true,
+      "created_date": "2024-03-27T08:47:28.406563Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 16,
+      "blog_name": "Cockatiels",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T09:16:54.827341Z",
+      "active": true,
+      "created_date": "2024-03-27T09:16:54.827320Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 15,
+      "blog_name": "Terminal",
+      "article": "güncelleme tamamlandı",
+      "update_date": "2024-03-27T14:56:17.578500Z",
+      "active": true,
+      "created_date": "2024-03-27T08:48:25.756209Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 23,
+      "blog_name": "clear",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T15:00:35.774455Z",
+      "active": true,
+      "created_date": "2024-03-27T15:00:35.774447Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 24,
+      "blog_name": "clear",
+      "article": "Once upon time",
+      "update_date": "2024-03-27T15:00:40.243867Z",
+      "active": true,
+      "created_date": "2024-03-27T15:00:40.243859Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 38,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T12:29:00.228787Z",
+      "active": true,
+      "created_date": "2024-03-28T12:29:00.228800Z",
+      "publish_date": "2024-03-28T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 40,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:24:10.623505Z",
+      "active": true,
+      "created_date": "2024-03-28T15:24:10.623524Z",
+      "publish_date": "2024-03-26T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 41,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:27:28.612592Z",
+      "active": true,
+      "created_date": "2024-03-28T15:27:28.612621Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 42,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:05.376322Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:05.376338Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 43,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:32.721274Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:32.721288Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 44,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:34.002358Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:34.002379Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 45,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:39.903227Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:39.903252Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 46,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:43.747214Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:43.747225Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 47,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:51.100022Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:51.100053Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 48,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:57.572664Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:57.572677Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 49,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:29:59.583675Z",
+      "active": true,
+      "created_date": "2024-03-28T15:29:59.583691Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 25,
+      "blog_name": "Terminal",
+      "article": "güncelleme tamamlandı",
+      "update_date": "2024-03-28T15:32:09.044016Z",
+      "active": true,
+      "created_date": "2024-03-27T15:01:37.454976Z",
+      "publish_date": "2023-02-22T00:00:00Z",
+      "image": null
+    },
+    {
+      "id": 51,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T15:38:43.535540Z",
+      "active": true,
+      "created_date": "2024-03-28T15:38:43.535555Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 52,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T17:20:52.228877Z",
+      "active": true,
+      "created_date": "2024-03-28T17:20:52.228908Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 53,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-28T19:20:21.309317Z",
+      "active": true,
+      "created_date": "2024-03-28T19:20:21.309389Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 54,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-29T21:21:47.486742Z",
+      "active": true,
+      "created_date": "2024-03-29T21:21:47.486755Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 56,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-29T21:38:57.468548Z",
+      "active": true,
+      "created_date": "2024-03-29T21:38:57.468617Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 70,
+      "blog_name": "non-active",
+      "article": "hi there",
+      "update_date": "2024-04-05T12:49:33Z",
+      "active": true,
+      "created_date": "2024-04-05T12:49:37.157641Z",
+      "publish_date": "2024-04-25T10:28:34.873837Z",
+      "image": "/media/media/insane.png"
+    },
+    {
+      "id": 58,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-29T21:55:41.303805Z",
+      "active": true,
+      "created_date": "2024-03-29T21:55:41.303831Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 59,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-29T21:58:30.162371Z",
+      "active": true,
+      "created_date": "2024-03-29T21:58:30.162403Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 60,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-03-29T22:16:43.923683Z",
+      "active": true,
+      "created_date": "2024-03-29T22:16:43.923696Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 61,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": "2024-04-02T11:25:00.912474Z",
+      "active": true,
+      "created_date": "2024-04-02T11:25:00.912565Z",
+      "publish_date": null,
+      "image": null
+    },
+    {
+      "id": 62,
+      "blog_name": "true path",
+      "article": "Once upon time",
+      "update_date": null,
+      "active": true,
+      "created_date": "2024-04-04T15:46:52.788437Z",
+      "publish_date": null,
+      "image": null
+    }
+  ]
+}
