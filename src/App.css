@@ -17,3 +17,27 @@
   text-decoration: none;
   color: #9B6262;
 }
+@media (min-width: 576px) {
+  .element {
+    width: 35%; /* Diğer boyutlar için %50 genişlik */
+  }
+}
+
+/* Ekran boyutu 576px altında (sm boyutu) */
+@media (max-width: 575.98px) {
+  .element {
+    width: 100%; /* sm boyutunda %100 genişlik */
+  }
+}
+@media (min-width: 576px) {
+  .font {
+    font-size: 35px; /* Diğer boyutlar için 16px font boyutu */
+  }
+}
+
+/* Ekran boyutu 576px altında (sm boyutu) */
+@media (max-width: 575.98px) {
+  .font {
+    font-size: 14px; /* sm boyutunda 14px font boyutu */
+  }
+}
