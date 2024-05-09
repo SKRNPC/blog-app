@@ -4,11 +4,6 @@ import axios from "axios";
 
 function HomePage() {
   const [users, setUsers] = useState([]);
-  const [isGrid, setIsGrid] = useState(false); // Düzen durumu
-
-  const handleLayoutChange = () => {
-    setIsGrid(!isGrid); // Durumu tersine çevir
-  };
 
   useEffect(() => {
     const fetchData = async () => {
