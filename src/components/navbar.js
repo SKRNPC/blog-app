@@ -9,7 +9,7 @@ function NavBar({ children }) {
         variant="dark"
         className=" p-2"
       >
-        <Navbar.Brand href="/home" className="text-dark p-4">
+        <Navbar.Brand href="/" className="text-dark p-4">
           Home
         </Navbar.Brand>
         <Form className="d-flex text-dark ">
