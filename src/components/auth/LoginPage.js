@@ -19,7 +19,7 @@ function LoginPage() {
     //   password,
     // };
     try {
-      navigation("/home");
+      navigation("/");
     } catch (error) {}
   };
 
