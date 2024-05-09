@@ -31,7 +31,7 @@
 }
 @media (min-width: 576px) {
   .font {
-    font-size: 35px; /* Diğer boyutlar için 16px font boyutu */
+    font-size: 28px; /* Diğer boyutlar için 16px font boyutu */
   }
 }
 

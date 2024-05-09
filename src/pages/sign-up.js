@@ -1,12 +1,15 @@
 import AuthLayout from "../components/auth/auth-layout";
 import SignUpPage from "../components/auth/SignUpPage";
+import NavBar from "../components/navbar";
 function SignUp() {
   return (
     <>
       <div>
-        <AuthLayout>
-          <SignUpPage />
-        </AuthLayout>
+        <NavBar>
+          <AuthLayout>
+            <SignUpPage />
+          </AuthLayout>
+        </NavBar>
       </div>
     </>
   );

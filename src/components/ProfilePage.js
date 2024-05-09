@@ -27,7 +27,6 @@ function ProfilePage() {
   console.log("sea", user);
   return (
     <>
-      <div className="col bg-white p-5 "></div>
       <div className="d-flex flex-row">
         <div
           className="col-2 d-flex flex-column p-5 "
