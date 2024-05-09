@@ -1,4 +1,5 @@
-import { Navbar, Nav, Form, FormControl } from "react-bootstrap";
+import { Navbar, Nav } from "react-bootstrap";
+
 function NavBar({ children }) {
   return (
     <>
@@ -12,14 +13,6 @@ function NavBar({ children }) {
         <Navbar.Brand href="/" className="text-dark p-4">
           Home
         </Navbar.Brand>
-        <Form className="d-flex text-dark ">
-          <FormControl
-            type="search"
-            placeholder="Search"
-            className="me-2 justify-content-end"
-            aria-label="Search"
-          />
-        </Form>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="ms-auto p-4 ">

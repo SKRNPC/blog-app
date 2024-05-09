@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import defaultImage from "../images/default-img.jpg";
 import axios from "axios";
+import SearchBar from "./search-bar";
 
 function HomePage() {
   const [users, setUsers] = useState([]);
@@ -20,6 +21,7 @@ function HomePage() {
   console.log(users.blogs);
   return (
     <>
+      <SearchBar users={users} setUsers={setUsers} />
       <div className="d-flex flex-column align-items-center ">
         {users.map((item) => (
           <div
