@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import defaultImage from "../images/default-img.jpg";
 import axios from "axios";
+import { ReactComponent as ListSvg } from "../images/icons/list.svg";
+import { ReactComponent as DotsSvg } from "../images/icons/dots-nine.svg";
 
 import { useSelector } from "react-redux";
 
@@ -31,9 +33,12 @@ function HomePage() {
   );
   return (
     <>
-      <button onClick={toggleLayout} className="btn btn-primary mb-3">
-        Düzeni Değiştir
-      </button>
+      <div className="d-flex justify-content-end py-2 px-3 border">
+        <button onClick={toggleLayout} className="btn border-0 ">
+          {isFirstLayout ? <DotsSvg /> : <ListSvg />}
+        </button>
+      </div>
+
       {isFirstLayout ? (
         <div className="d-flex flex-column align-items-center ">
           {filteredUsers.map((item) => (
