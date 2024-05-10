@@ -1,4 +1,3 @@
-import UserSvg from "../../images/icons/user-duotone.svg";
 import { ReactComponent as EyeClosedSvg } from "../../images/icons/eye-closed-duotone.svg";
 import { ReactComponent as EmailSvg } from "../../images/icons/email.svg";
 import { ReactComponent as PasswordSvg } from "../../images/icons/password-duotone.svg";
