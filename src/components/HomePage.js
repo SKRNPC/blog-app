@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import defaultImage from "../images/default-img.jpg";
 import axios from "axios";
-import SearchBar from "./search-bar";
+
+import { useSelector } from "react-redux";
 
 function HomePage() {
   const [users, setUsers] = useState([]);
@@ -19,11 +20,14 @@ function HomePage() {
     fetchData();
   }, []);
   console.log(users.blogs);
+  const searchTerm = useSelector((state) => state.search.searchTerm);
+  const filteredUsers = users.filter((user) =>
+    user.blog_name.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   return (
     <>
-      <SearchBar users={users} setUsers={setUsers} />
       <div className="d-flex flex-column align-items-center ">
-        {users.map((item) => (
+        {filteredUsers.map((item) => (
           <div
             className="col-11 col-md-10 col-lg-9 col-xl-8 p-3 p-lg-5 mb-4"
             style={{ backgroundColor: "#fff8f5" }}

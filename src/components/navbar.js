@@ -1,5 +1,5 @@
 import { Navbar, Nav } from "react-bootstrap";
-
+import SearchBar from "./search-bar";
 function NavBar({ children }) {
   return (
     <>
@@ -13,9 +13,14 @@ function NavBar({ children }) {
         <Navbar.Brand href="/" className="text-dark p-4">
           Home
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ms-auto p-4 ">
+          <div className="p-2">
+            <SearchBar />
+          </div>
+
+          <Nav className="ms-auto p-3 ">
             <Nav.Link href="/login" className="text-dark ">
               Login
             </Nav.Link>
