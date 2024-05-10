@@ -32,9 +32,9 @@ function SignUp() {
 
   return (
     <form onSubmit={(e) => handleSubmit(e)} className="p-xl-5 p-md-2 p-sm-0">
-      <div className="mb-4 mx-5 text-center mt-4 ">
+      <div className="d-flex flex-column text-center justify-content-center pb-4 ">
         <h2>Sign Up</h2>
-        <p className="mb-4 text-sm-center ">Create your account</p>
+        <p className="mb-1 text-sm-center ">Create your account</p>
       </div>
       <div className="col">
         <div className="mb-4 mx-3 d-flex flex-row align-items-center ">

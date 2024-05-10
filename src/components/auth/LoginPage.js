@@ -25,8 +25,14 @@ function LoginPage() {
 
   console.log(email, password);
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className=" p-xl-5 p-md-2 p-sm-0 ">
-      <img src={UserSvg} alt="icon" className="d-flex mx-auto mb-4 mt-4 " />
+    <form
+      onSubmit={(e) => handleSubmit(e)}
+      className=" p-xl-5 p-md-2 p-sm-0 "
+      style={{ backgroundColor: "#fff8f5" }}
+    >
+      <div className="d-flex justify-content-center pb-4 ">
+        <h2>Welcome</h2>
+      </div>
       <div className="col">
         <div className=" mb-3 mx-3 d-flex flex-row align-items-center">
           <EmailSvg />
