@@ -1,32 +1,8 @@
-import axios from "axios";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function ProfilePage() {
-  const [user, setUser] = useState({});
-
-  const { id } = useParams();
-  useEffect(() => {
-    const fetchUserData = async () => {
-      try {
-        const response = await axios.get(
-          "https://last-samurai-487ac5fe23f0.herokuapp.com/profile"
-        );
-        if (parseInt(id) === response.data.data.id) {
-          // URL'deki ID, JSON dosyasındaki kullanıcı ID'sine eşitse
-          setUser(response.data.data);
-        } else {
-          throw new Error("Kullanıcı bulunamadı"); // Kullanıcı bulunamazsa hata fırlat
-        }
-      } catch (error) {
-        console.error("There was a problem fetching the user data:", error);
-      }
-    };
-
-    fetchUserData();
-  }, [id]);
-  console.log(id);
-  console.log("sea", user);
+  const { isAuthenticated } = useSelector((state) => state.auth);
+  console.log(isAuthenticated);
   return (
     <>
       <div className="d-flex flex-row">
@@ -53,11 +29,11 @@ function ProfilePage() {
           <div className="display-5 p-4">About</div>
           <div className="lead p-4">
             <div className="mb-2">Username</div>
-            <div>{user.username}</div>
+            <div className="mb-2">{isAuthenticated.username}</div>
           </div>
           <div className="lead p-4">
             <div className="mb-2">Email</div>
-            <div>{user.email}</div>
+            <div className="mb-2">{isAuthenticated.email}</div>
           </div>
         </div>
       </div>

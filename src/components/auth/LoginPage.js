@@ -26,14 +26,14 @@ function LoginPage() {
         "https://last-samurai-487ac5fe23f0.herokuapp.com/login/",
         payload
       );
-      console.log("debe", response.data);
+
       localStorage.setItem("token", response?.data?.access);
+      localStorage.setItem("refresh_token", response?.data?.data?.refresh);
 
-      // Redux Toolkit kullanarak login eylemini tetikleme
-      dispatch(login(response?.data?.access));
-
-      navigation("/");
-      console.log("sd");
+      dispatch(login(response.data.data));
+      console.log("debe", response.data.data);
+      console.log(login);
+      navigation("/login/pro");
     } catch (error) {}
   };
 

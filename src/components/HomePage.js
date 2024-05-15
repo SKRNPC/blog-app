@@ -12,14 +12,12 @@ function HomePage(isFirstLayout) {
       try {
         const response = await axios.get("/home_active.json");
         setUsers(response.data.blogs);
-      } catch (error) {
-        console.error("There was a problem with the Axios request:", error);
-      }
+      } catch (error) {}
     };
 
     fetchData();
   }, []);
-  console.log(users.blogs);
+
   const searchTerm = useSelector((state) => state.search.searchTerm);
   const filteredUsers = users.filter((user) =>
     user.blog_name.toLowerCase().includes(searchTerm.toLowerCase())

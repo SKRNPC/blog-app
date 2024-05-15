@@ -3,13 +3,15 @@ import Nav from "react-bootstrap/Nav";
 import SearchBar from "./search-bar";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/features/authSlice";
+import { useSelector } from "react-redux";
 function NavBar({ children }) {
+  const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
-
     localStorage.removeItem("token");
   };
+  console.log(isAuthenticated);
   return (
     <>
       <Navbar
@@ -36,14 +38,16 @@ function NavBar({ children }) {
             <Nav.Link eventKey={2} href="/signup" className="text-dark ">
               Sign up
             </Nav.Link>
-            <Nav.Link
-              eventKey={3}
-              href="/"
-              onClick={handleLogout}
-              className="text-dark "
-            >
-              Logout
-            </Nav.Link>
+            {isAuthenticated ? (
+              <Nav.Link
+                eventKey={3}
+                href="/"
+                onClick={handleLogout}
+                className="text-dark "
+              >
+                Logout
+              </Nav.Link>
+            ) : null}
           </Nav>
         </Navbar.Collapse>
       </Navbar>
