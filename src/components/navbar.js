@@ -9,6 +9,7 @@ function NavBar({ children }) {
   const dispatch = useDispatch();
   const handleLogout = () => {
     dispatch(logout());
+
     localStorage.removeItem("token");
   };
   console.log(isAuthenticated);
@@ -32,22 +33,30 @@ function NavBar({ children }) {
           </div>
 
           <Nav className="ms-auto p-3 ">
-            <Nav.Link href="/login" className="text-dark ">
-              Login
-            </Nav.Link>
-            <Nav.Link eventKey={2} href="/signup" className="text-dark ">
-              Sign up
-            </Nav.Link>
             {isAuthenticated ? (
-              <Nav.Link
-                eventKey={3}
-                href="/"
-                onClick={handleLogout}
-                className="text-dark "
-              >
-                Logout
-              </Nav.Link>
-            ) : null}
+              <>
+                <Nav.Link
+                  eventKey={3}
+                  href="/home"
+                  onClick={handleLogout}
+                  className="text-dark "
+                >
+                  Logout
+                </Nav.Link>
+                <Nav.Link eventKey={4} href="/profile" className="text-dark ">
+                  Profile
+                </Nav.Link>
+              </>
+            ) : (
+              <>
+                <Nav.Link href="/login" className="text-dark ">
+                  Login
+                </Nav.Link>
+                <Nav.Link eventKey={2} href="/signup" className="text-dark ">
+                  Sign up
+                </Nav.Link>
+              </>
+            )}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

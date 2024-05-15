@@ -1,8 +1,30 @@
-import { useSelector } from "react-redux";
+import axios from "axios";
+import { useEffect, useState } from "react";
 
 function ProfilePage() {
-  const { isAuthenticated } = useSelector((state) => state.auth);
-  console.log(isAuthenticated);
+  const [user, setUser] = useState([]);
+  const bearerToken = localStorage.getItem("token");
+  const getProfile = async () => {
+    try {
+      const response = await axios.get(
+        "https://last-samurai-487ac5fe23f0.herokuapp.com/profile",
+        {
+          headers: {
+            Authorization: `Bearer ${bearerToken}`,
+          },
+        }
+      );
+      console.log("res", response);
+      setUser(response.data);
+      console.log("se", user);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getProfile();
+  }, []);
+
   return (
     <>
       <div className="d-flex flex-row">
@@ -29,11 +51,11 @@ function ProfilePage() {
           <div className="display-5 p-4">About</div>
           <div className="lead p-4">
             <div className="mb-2">Username</div>
-            <div className="mb-2">{isAuthenticated.username}</div>
+            <div className="mb-2">{user.username}</div>
           </div>
           <div className="lead p-4">
             <div className="mb-2">Email</div>
-            <div className="mb-2">{isAuthenticated.email}</div>
+            <div className="mb-2">{user.email}</div>
           </div>
         </div>
       </div>

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import LoginPage from "../components/auth/LoginPage";
 import AuthLayout from "../components/auth/auth-layout";
 import NavBar from "../components/navbar";
