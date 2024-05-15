@@ -5,11 +5,14 @@ import { ReactComponent as EyeSvg } from "../../images/icons/eye-duotone.svg";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { login } from "../../redux/features/authSlice";
 
 function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
   const navigation = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -25,6 +28,9 @@ function LoginPage() {
       );
       console.log("debe", response.data);
       localStorage.setItem("token", response?.data?.access);
+
+      // Redux Toolkit kullanarak login eylemini tetikleme
+      dispatch(login(response?.data?.access));
 
       navigation("/");
       console.log("sd");
