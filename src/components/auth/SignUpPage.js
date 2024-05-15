@@ -5,27 +5,29 @@ import { ReactComponent as EyeClosedSvg } from "../../images/icons/eye-closed-du
 import { ReactComponent as EyeSvg } from "../../images/icons/eye-duotone.svg";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function SignUp() {
   const [isVisible, setIsVisible] = useState(false);
-  // const [isVisibleConfirmPassword, setIsVisibleConfirmPassword] =
-  //   useState(false);
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  // const [passwordRepeat, setPasswordRepeat] = useState("");
   const navigation = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const payload = {
-    //   username,
-    //   email,
-    //   password,
-    //   role: "BLOGGER",
-    // };
+    const payload = {
+      username,
+      email,
+      password,
+      role: "BLOGGER",
+    };
     try {
+      await axios.post(
+        "https://last-samurai-487ac5fe23f0.herokuapp.com/register/",
+        payload
+      );
       navigation("/login");
     } catch (error) {}
   };
@@ -82,30 +84,6 @@ function SignUp() {
             </div>
           </div>
         </div>
-        {/* <div className="mb-4 mx-3 d-flex flex-row align-items-center">
-              <PasswordSvg />
-              <div
-                className="d-flex flex-row align-items-center ms-2 rounded-3"
-                style={{ backgroundColor: "#E2D6D6", width: "100%" }}
-              >
-                <input
-                  type={isVisibleConfirmPassword ? "text" : "password"}
-                  className="form-control form-control-lg custom-input "
-                  placeholder="Confirm Password"
-                  style={{ backgroundColor: "#E2D6D6", border: "none" }}
-                  onChange={(event) => setPasswordRepeat(event.target.value)}
-                />
-                <div
-                  onClick={() =>
-                    setIsVisibleConfirmPassword(!isVisibleConfirmPassword)
-                  }
-                  className="mx-2"
-                  style={{ cursor: "pointer" }}
-                >
-                  {isVisibleConfirmPassword ? <EyeSvg /> : <EyeClosedSvg />}
-                </div>
-              </div>
-            </div> */}
         <div className="mx-3 mb-2 d-flex justify-content-end">
           <button
             type="submit"

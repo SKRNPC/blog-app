@@ -4,6 +4,7 @@ import { ReactComponent as PasswordSvg } from "../../images/icons/password-duoto
 import { ReactComponent as EyeSvg } from "../../images/icons/eye-duotone.svg";
 import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 function LoginPage() {
   const [isVisible, setIsVisible] = useState(false);
@@ -13,16 +14,23 @@ function LoginPage() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // const payload = {
-    //   email,
-    //   password,
-    // };
+    const payload = {
+      email,
+      password,
+    };
     try {
+      const response = await axios.post(
+        "https://last-samurai-487ac5fe23f0.herokuapp.com/login/",
+        payload
+      );
+      console.log("debe", response.data);
+      localStorage.setItem("token", response?.data?.access);
+
       navigation("/");
+      console.log("sd");
     } catch (error) {}
   };
 
-  console.log(email, password);
   return (
     <form
       onSubmit={(e) => handleSubmit(e)}

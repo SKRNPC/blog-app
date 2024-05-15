@@ -1,4 +1,5 @@
-import { Navbar, Nav } from "react-bootstrap";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
 import SearchBar from "./search-bar";
 function NavBar({ children }) {
   return (

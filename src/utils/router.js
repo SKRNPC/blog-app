@@ -4,6 +4,7 @@ import Login from "../pages/login";
 import SignUp from "../pages/sign-up";
 import Profile from "../pages/profile";
 import NavBar from "../components/navbar";
+import MyPost from "../pages/my-post";
 
 export const router = createBrowserRouter([
   {
@@ -25,5 +26,9 @@ export const router = createBrowserRouter([
   {
     path: "/navbar",
     element: <NavBar />,
+  },
+  {
+    path: "/login/post",
+    element: <MyPost />,
   },
 ]);

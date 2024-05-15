@@ -9,7 +9,9 @@ function ProfilePage() {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`/login.json`);
+        const response = await axios.get(
+          "https://last-samurai-487ac5fe23f0.herokuapp.com/profile"
+        );
         if (parseInt(id) === response.data.data.id) {
           // URL'deki ID, JSON dosyasındaki kullanıcı ID'sine eşitse
           setUser(response.data.data);
