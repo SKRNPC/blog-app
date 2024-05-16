@@ -12,6 +12,7 @@ function SignUp() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [message, setMessage] = useState("");
   const navigation = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -29,80 +30,85 @@ function SignUp() {
         payload
       );
       navigation("/login");
-    } catch (error) {}
+    } catch (error) {
+      setMessage(error.response.data);
+      console.log(message);
+    }
   };
 
   return (
-    <form onSubmit={(e) => handleSubmit(e)} className="p-xl-5 p-md-2 p-sm-0">
-      <div className="d-flex flex-column text-center justify-content-center pb-4 ">
-        <h2>Sign Up</h2>
-        <p className="mb-1 text-sm-center ">Create your account</p>
-      </div>
-      <div className="col">
-        <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
-          <UserSvg />
-          <input
-            value={username}
-            type="text"
-            className="form-control form-control-lg custom-input ms-2 rounded-0 "
-            placeholder="Username"
-            style={{ backgroundColor: "#E2D6D6" }}
-            onChange={(e) => setUsername(e.target.value)}
-          />
+    <>
+      <form onSubmit={(e) => handleSubmit(e)} className="p-xl-5 p-md-2 p-sm-0">
+        <div className="d-flex flex-column text-center justify-content-center pb-4 ">
+          <h2>Sign Up</h2>
+          <p className="mb-1 text-sm-center ">Create your account</p>
         </div>
-        <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
-          <EmailSvg />
-          <input
-            value={email}
-            type="email"
-            className="form-control form-control-lg custom-input ms-2 rounded-0 "
-            placeholder="Email"
-            style={{ backgroundColor: "#E2D6D6" }}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div className="mb-4 mx-3 d-flex flex-row align-items-center">
-          <PasswordSvg />
-          <div
-            className="d-flex flex-row align-items-center ms-2 "
-            style={{ backgroundColor: "#E2D6D6", width: "100%" }}
-          >
+        <div className="col">
+          <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
+            <UserSvg />
             <input
-              value={password}
-              type={isVisible ? "text" : "password"}
-              className="form-control form-control-lg custom-input rounded-0 "
-              placeholder="Password"
-              style={{ backgroundColor: "#E2D6D6", border: "none" }}
-              onChange={(event) => setPassword(event.target.value)}
+              value={username}
+              type="text"
+              className="form-control form-control-lg custom-input ms-2 rounded-0 "
+              placeholder="Username"
+              style={{ backgroundColor: "#E2D6D6" }}
+              onChange={(e) => setUsername(e.target.value)}
             />
+          </div>
+          <div className="mb-4 mx-3 d-flex flex-row align-items-center ">
+            <EmailSvg />
+            <input
+              value={email}
+              type="email"
+              className="form-control form-control-lg custom-input ms-2 rounded-0 "
+              placeholder="Email"
+              style={{ backgroundColor: "#E2D6D6" }}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="mb-4 mx-3 d-flex flex-row align-items-center">
+            <PasswordSvg />
             <div
-              onClick={() => setIsVisible(!isVisible)}
-              className="mx-2"
-              style={{ cursor: "pointer" }}
+              className="d-flex flex-row align-items-center ms-2 "
+              style={{ backgroundColor: "#E2D6D6", width: "100%" }}
             >
-              {isVisible ? <EyeSvg /> : <EyeClosedSvg />}
+              <input
+                value={password}
+                type={isVisible ? "text" : "password"}
+                className="form-control form-control-lg custom-input rounded-0 "
+                placeholder="Password"
+                style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                onChange={(event) => setPassword(event.target.value)}
+              />
+              <div
+                onClick={() => setIsVisible(!isVisible)}
+                className="mx-2"
+                style={{ cursor: "pointer" }}
+              >
+                {isVisible ? <EyeSvg /> : <EyeClosedSvg />}
+              </div>
             </div>
           </div>
+          <div className="mx-3 mb-2 d-flex justify-content-end">
+            <button
+              type="submit"
+              className="btn btn-lg  text-white rounded-0 "
+              style={{ backgroundColor: "#9B6262", width: "100%" }}
+            >
+              Sign Up
+            </button>
+          </div>
+          <div className="row mx-auto ">
+            <p className="d-flex justify-content-center text-sm-center  ">
+              Already have an account?&nbsp;
+              <Link to="/login" className="signup-link">
+                Login
+              </Link>
+            </p>
+          </div>
         </div>
-        <div className="mx-3 mb-2 d-flex justify-content-end">
-          <button
-            type="submit"
-            className="btn btn-lg  text-white rounded-0 "
-            style={{ backgroundColor: "#9B6262", width: "100%" }}
-          >
-            Sign Up
-          </button>
-        </div>
-        <div className="row mx-auto ">
-          <p className="d-flex justify-content-center text-sm-center  ">
-            Already have an account?&nbsp;
-            <Link to="/login" className="signup-link">
-              Login
-            </Link>
-          </p>
-        </div>
-      </div>
-    </form>
+      </form>
+    </>
   );
 }
 

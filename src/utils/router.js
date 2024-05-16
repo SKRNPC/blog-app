@@ -5,6 +5,7 @@ import SignUp from "../pages/sign-up";
 import Profile from "../pages/profile";
 import NavBar from "../components/navbar";
 import MyPost from "../pages/my-post";
+import CreatePost from "../pages/create-post";
 
 export const router = createBrowserRouter([
   {
@@ -30,5 +31,9 @@ export const router = createBrowserRouter([
   {
     path: "/login/post",
     element: <MyPost />,
+  },
+  {
+    path: "/create",
+    element: <CreatePost />,
   },
 ]);

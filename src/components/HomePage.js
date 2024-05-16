@@ -106,6 +106,14 @@ function HomePage() {
           ))}
         </div>
       )}
+      <div
+        className=""
+        style={{ position: "fixed", bottom: 0, right: 0, margin: "20px" }}
+      >
+        <button className="btn bg-primary rounded-circle text-white  py-4">
+          blog ekle
+        </button>
+      </div>
     </>
   );
 }

@@ -35,6 +35,9 @@ function NavBar({ children }) {
           <Nav className="ms-auto p-3 ">
             {isAuthenticated ? (
               <>
+                <Nav.Link href="/create" className="text-dark ">
+                  Blog yaz
+                </Nav.Link>
                 <Nav.Link
                   eventKey={3}
                   href="/home"
@@ -49,6 +52,9 @@ function NavBar({ children }) {
               </>
             ) : (
               <>
+                <Nav.Link href="/create" className="text-dark ">
+                  Blog yaz
+                </Nav.Link>
                 <Nav.Link href="/login" className="text-dark ">
                   Login
                 </Nav.Link>
