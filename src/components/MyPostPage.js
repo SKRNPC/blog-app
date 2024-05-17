@@ -23,7 +23,7 @@ function MyPostPage() {
   };
   const handleDelete = async (id) => {
     try {
-      const response = await axios.delete(
+      await axios.delete(
         `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog?id=${id}`,
         {
           headers: {
