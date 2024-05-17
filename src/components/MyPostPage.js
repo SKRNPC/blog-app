@@ -21,6 +21,21 @@ function MyPostPage() {
       console.log(error);
     }
   };
+  const handleDelete = async (id) => {
+    try {
+      const response = await axios.delete(
+        `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog?id=${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${bearerToken}`,
+          },
+        }
+      );
+      setPosts(posts.filter((post) => post.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
     getPosts();
   }, []);
@@ -31,6 +46,7 @@ function MyPostPage() {
           <div key={post.id}>
             <h2>{post.blog_name}</h2>
             <p>{post.article}</p>
+            <button onClick={() => handleDelete(post.id)}>sil</button>
           </div>
         ))}
       </div>
