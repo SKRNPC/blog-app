@@ -1,9 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function MyPostPage() {
   const [posts, setPosts] = useState([]);
   const bearerToken = localStorage.getItem("token");
+  const navigation = useNavigate();
   const getPosts = async () => {
     try {
       const response = await axios.get(
@@ -20,6 +22,10 @@ function MyPostPage() {
     } catch (error) {
       console.log(error);
     }
+  };
+  const handleClick = (id) => {
+    localStorage.setItem("postId", id);
+    navigation("/update");
   };
   const handleDelete = async (id) => {
     try {
@@ -46,7 +52,8 @@ function MyPostPage() {
           <div key={post.id}>
             <h2>{post.blog_name}</h2>
             <p>{post.article}</p>
-            <button onClick={() => handleDelete(post.id)}>sil</button>
+            <button onClick={() => handleDelete(post.id)}>delete</button>
+            <button onClick={() => handleClick(post.id)}>update</button>
           </div>
         ))}
       </div>
