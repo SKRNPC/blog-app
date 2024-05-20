@@ -32,6 +32,14 @@ function MyPostPage() {
     localStorage.setItem("postId", id);
     navigation("/update");
   };
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(" ");
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(" ") + " ...";
+    }
+    return text;
+  };
+
   const handleDelete = async (id) => {
     try {
       await axios.delete(
@@ -61,11 +69,11 @@ function MyPostPage() {
             <div className="bg-white d-flex flex-sm-row flex-column justify-content-between">
               <div className=" d-flex flex-column justify-content-between  w-100 order-sm-1 order-2 ">
                 <div className="">
-                  <div className="col d-flex align-items-center p-sm-2 p-md-3 p-1 fw-bolder ">
-                    <h1 className="m-0 display-3 ">{post.blog_name}</h1>
+                  <div className="col d-flex align-items-center p-sm-2 p-md-2 p-1 fw-bolder ">
+                    <h3 className="m-0 display-6 ">{post.blog_name}</h3>
                   </div>
-                  <div className="col d-flex align-items-center  p-md-4 p-sm-3 p-2 ">
-                    <p className="font m-0">{post.article}</p>
+                  <div className="col d-flex align-items-center  p-md-3 p-sm-3 p-2 ">
+                    <p className="font m-0">{truncateText(post.article, 20)}</p>
                   </div>
                 </div>
                 <div className="p-md-3 p-sm-2 p-1 ">

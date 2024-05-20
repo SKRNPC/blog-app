@@ -29,7 +29,10 @@ function HomePage() {
   );
   return (
     <>
-      <div className="d-flex justify-content-end py-2 px-3 border">
+      <div
+        className="d-flex justify-content-end py-2 px-3 border"
+        style={{ backgroundColor: "#d7f1fa" }}
+      >
         <button onClick={toggleLayout} className="btn border-0 ">
           {isFirstLayout ? <DotsSvg /> : <ListSvg />}
         </button>
@@ -39,7 +42,7 @@ function HomePage() {
           {filteredUsers.map((item) => (
             <div
               className="col-11 col-md-10 col-lg-9 col-xl-8 p-3 p-lg-5 my-3"
-              style={{ backgroundColor: "#fff8f5" }}
+              style={{ backgroundColor: "#d7f1fa" }}
             >
               <div className="bg-white d-flex flex-sm-row flex-column justify-content-between">
                 <div className=" d-flex flex-column justify-content-between  w-100 order-sm-1 order-2 ">
@@ -74,7 +77,7 @@ function HomePage() {
           {filteredUsers.map((item) => (
             <div
               className="col-md-2 p-3 my-3 mx-3"
-              style={{ backgroundColor: "#fff8f5" }}
+              style={{ backgroundColor: "#d7f1fa" }}
             >
               <div className="bg-white d-flex flex-column h-100 ">
                 <div className=" d-flex flex-column justify-content-between h-100 w-100 order-2 ">
