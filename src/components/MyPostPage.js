@@ -11,23 +11,7 @@ function MyPostPage() {
     // İstediğiniz URL'ye yönlendirin
     navigation(`/detail/${id}`);
   };
-  const getPosts = async () => {
-    try {
-      const response = await axios.get(
-        `https://last-samurai-487ac5fe23f0.herokuapp.com/home_inactive`,
-        {
-          headers: {
-            Authorization: `Bearer ${bearerToken}`,
-          },
-        }
-      );
-      console.log("res", response.data);
-      setPosts(response.data.blogs);
-      console.log("se", posts);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   const handleClick = (id) => {
     localStorage.setItem("postId", id);
     navigation("/update");
@@ -56,8 +40,25 @@ function MyPostPage() {
     }
   };
   useEffect(() => {
+    const getPosts = async () => {
+      try {
+        const response = await axios.get(
+          `https://last-samurai-487ac5fe23f0.herokuapp.com/home_inactive`,
+          {
+            headers: {
+              Authorization: `Bearer ${bearerToken}`,
+            },
+          }
+        );
+        console.log("res", response.data);
+        setPosts(response.data.blogs);
+        console.log("se", posts);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getPosts();
-  }, []);
+  }, [bearerToken, posts]);
   return (
     <div className=" min-vh-100 bg-image-home align-items-baseline p-5">
       <div className="d-flex flex-column align-items-center ">

@@ -11,8 +11,7 @@ function PostDetailPage() {
   function formatDate(dateString) {
     const date = new Date(dateString);
     if (isNaN(date)) {
-      console.error("Invalid date format:", dateString);
-      return "Invalid Date";
+      return null;
     }
     return date.toLocaleDateString("en-US", {
       year: "numeric",
@@ -21,26 +20,26 @@ function PostDetailPage() {
     });
   }
 
-  const getPostDetail = async () => {
-    try {
-      const response = await axios.get(
-        `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog?id=${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${bearerToken}`,
-          },
-        }
-      );
-      console.log("res", response.data);
-      setPost(response.data);
-      console.log("se", post);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
+    const getPostDetail = async () => {
+      try {
+        const response = await axios.get(
+          `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog?id=${id}`,
+          {
+            headers: {
+              Authorization: `Bearer ${bearerToken}`,
+            },
+          }
+        );
+        console.log("res", response.data);
+        setPost(response.data);
+        console.log("se", post);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getPostDetail();
-  }, []);
+  }, [bearerToken, id, post]);
 
   return (
     <>

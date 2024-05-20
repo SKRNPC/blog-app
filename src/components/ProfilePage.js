@@ -4,26 +4,27 @@ import { useEffect, useState } from "react";
 function ProfilePage() {
   const [user, setUser] = useState([]);
   const bearerToken = localStorage.getItem("token");
-  const getProfile = async () => {
-    try {
-      const response = await axios.get(
-        "https://last-samurai-487ac5fe23f0.herokuapp.com/profile",
-        {
-          headers: {
-            Authorization: `Bearer ${bearerToken}`,
-          },
-        }
-      );
-      console.log("res", response);
-      setUser(response.data);
-      console.log("se", user);
-    } catch (error) {
-      console.log(error);
-    }
-  };
+
   useEffect(() => {
+    const getProfile = async () => {
+      try {
+        const response = await axios.get(
+          "https://last-samurai-487ac5fe23f0.herokuapp.com/profile",
+          {
+            headers: {
+              Authorization: `Bearer ${bearerToken}`,
+            },
+          }
+        );
+        console.log("res", response);
+        setUser(response.data);
+        console.log("se", user);
+      } catch (error) {
+        console.log(error);
+      }
+    };
     getProfile();
-  }, []);
+  }, [bearerToken, user]);
 
   return (
     <>
