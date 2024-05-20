@@ -35,7 +35,7 @@ function HomePage() {
         </button>
       </div>
       {isFirstLayout ? (
-        <div className="d-flex flex-column align-items-center ">
+        <div className="bg-image-home d-flex flex-column align-items-center ">
           {filteredUsers.map((item) => (
             <div
               className="col-11 col-md-10 col-lg-9 col-xl-8 p-3 p-lg-5 my-3"
@@ -70,7 +70,7 @@ function HomePage() {
           ))}
         </div>
       ) : (
-        <div className="d-flex flex-row flex-wrap justify-content-center ">
+        <div className="bg-image-home d-flex flex-row flex-wrap justify-content-center ">
           {filteredUsers.map((item) => (
             <div
               className="col-md-2 p-3 my-3 mx-3"
@@ -110,9 +110,7 @@ function HomePage() {
         className=""
         style={{ position: "fixed", bottom: 0, right: 0, margin: "20px" }}
       >
-        <button className="btn bg-primary rounded-circle text-white  py-4">
-          blog ekle
-        </button>
+        <button className="btn bg-primary rounded-circle text-white">+</button>
       </div>
     </>
   );

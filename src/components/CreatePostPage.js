@@ -5,11 +5,18 @@ import { useNavigate } from "react-router-dom";
 function CreatePostPage() {
   const [name, setName] = useState("");
   const [article, setArticle] = useState("");
-
+  // const [image, setImage] = useState(null);
   const navigation = useNavigate();
+  // const handleImageChange = (e) => {
+  //   setImage(e.target.files[0]);
+  // };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const bearerToken = localStorage.getItem("token");
+    // const formData = new FormData();
+    // formData.append("image", image);
+
     const payload = {
       blog_name: name,
       article: article,
@@ -32,36 +39,55 @@ function CreatePostPage() {
   console.log(name);
   console.log(article);
   return (
-    <>
-      <div>
-        <form onSubmit={(e) => handleSubmit(e)} className="p-5">
-          <div className=" p-2">
-            <label className="form-label">Name</label>
+    <div className=" vh-100 bg-image align-items-baseline p-5">
+      <div className="col-8 d-flex mx-auto justify-content-center">
+        <form
+          onSubmit={(e) => handleSubmit(e)}
+          className="d-flex align-items-center flex-column w-100 p-3"
+        >
+          <div className=" p-2 d-flex flex-column w-75">
+            <label className="form-label display-6 text-secondary">Title</label>
             <input
               type="text"
-              className="form-control d-flex w-25"
+              className="form-control d-flex w-100 border border-dark"
               value={name}
               onChange={(e) => setName(e.target.value)}
-              placeholder="Enter your post name"
+              style={{ backgroundColor: "transparent" }}
             />
           </div>
-          <div className="p-2">
-            <label className="form-label">Article</label>
+          <div className="p-2 d-flex flex-column w-75">
+            <label className="form-label display-6 text-secondary ">
+              Article
+            </label>
             <textarea
               type="text"
               value={article}
               onChange={(e) => setArticle(e.target.value)}
-              className="form-control d-flex w-75"
+              className="form-control d-flex w-100 border border-dark"
+              rows="10"
+              style={{ backgroundColor: "transparent" }}
             />
           </div>
-          <div className="p-2 d-flex">
-            <button type="submit" className=" btn btn-primary">
-              Submit
+          {/* <div className="p-2 d-flex flex-column w-75">
+            <label className="form-label display-6 text-secondary">
+              Upload Image
+            </label>
+            <input
+              type="file"
+              onChange={handleImageChange}
+              className="form-control d-flex border border-dark w-50"
+              accept="image/*"
+              style={{ backgroundColor: "transparent" }}
+            />
+          </div> */}
+          <div className="p-2 d-flex justify-content-start w-75">
+            <button type="submit" className=" btn btn-primary w-50">
+              Create
             </button>
           </div>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

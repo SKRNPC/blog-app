@@ -7,6 +7,7 @@ import NavBar from "../components/navbar";
 import MyPost from "../pages/my-post";
 import CreatePost from "../pages/create-post";
 import UpdatePost from "../pages/update-post";
+import PostDetail from "../pages/post-detail";
 
 export const router = createBrowserRouter([
   {
@@ -40,5 +41,9 @@ export const router = createBrowserRouter([
   {
     path: "/update",
     element: <UpdatePost />,
+  },
+  {
+    path: "/detail/:id",
+    element: <PostDetail />,
   },
 ]);
