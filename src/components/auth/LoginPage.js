@@ -44,11 +44,10 @@ function LoginPage() {
       <ToastContainer />
       <form
         onSubmit={(e) => handleSubmit(e)}
-        className=" p-xl-5 p-md-2 p-sm-0 "
-        style={{ backgroundColor: "#fff8f5" }}
+        className=" p-xl-2 p-md-2 p-sm-0 "
       >
         <div className="d-flex justify-content-center pb-4 ">
-          <h2>Welcome</h2>
+          <h2 className="display-6">Welcome</h2>
         </div>
         <div className="col">
           <div className=" mb-3 mx-3 d-flex flex-row align-items-center">
@@ -56,9 +55,11 @@ function LoginPage() {
             <input
               value={email}
               type="email"
-              className="form-control form-control-lg custom-input ms-2 rounded-0"
+              className="form-control form-control-lg ms-2 rounded-3 border border-dark"
               placeholder="Email"
-              style={{ backgroundColor: "#E2D6D6" }}
+              style={{
+                backgroundColor: "transparent",
+              }}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
@@ -66,15 +67,18 @@ function LoginPage() {
           <div className="mb-3 mx-3 d-flex flex-row align-items-center">
             <PasswordSvg />
             <div
-              className="d-flex flex-row align-items-center ms-2"
-              style={{ backgroundColor: "#E2D6D6", width: "100%" }}
+              className="d-flex flex-row align-items-center ms-2 rounded-3 border border-dark"
+              style={{
+                backgroundColor: "transparent",
+                width: "100%",
+              }}
             >
               <input
                 value={password}
                 type={isVisible ? "text" : "password"}
-                className="form-control form-control-lg custom-input rounded-0"
+                className="form-control form-control-lg rounded-3 "
                 placeholder="Password"
-                style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                style={{ backgroundColor: "transparent", border: "none" }}
                 onChange={(e) => setPassword(e.target.value)}
               />
 
@@ -100,7 +104,7 @@ function LoginPage() {
           <div className="mx-3 mb-2 d-flex justify-content-end">
             <button
               type="submit"
-              className="btn rounded-0 btn-lg  text-white fw-bold"
+              className="btn-lg btn  text-white rounded-3"
               style={{ backgroundColor: "#9B6262", width: "100%" }}
             >
               Login

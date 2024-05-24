@@ -1,7 +1,6 @@
-import { Form, FormControl } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { setSearchTerm } from "../redux/features/searchSlice";
-
+import { ReactComponent as SearchIcon } from "../images/icons/search-icon.svg";
 function SearchBar() {
   const searchTerm = useSelector((state) => state.search.searchTerm);
   const dispatch = useDispatch();
@@ -10,16 +9,19 @@ function SearchBar() {
   };
   return (
     <>
-      <Form className=" d-flex">
-        <FormControl
+      <form className="d-flex" role="search">
+        <input
           type="search"
+          className="form-control me-2 rounded-3"
           placeholder="Search"
-          className=""
           aria-label="Search"
           value={searchTerm}
           onChange={handleChange}
         />
-      </Form>
+        <button className="btn" type="submit">
+          <SearchIcon />
+        </button>
+      </form>
     </>
   );
 }

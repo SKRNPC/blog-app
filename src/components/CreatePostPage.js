@@ -10,10 +10,10 @@ function CreatePostPage() {
   // const handleImageChange = (e) => {
   //   setImage(e.target.files[0]);
   // };
-
+  const bearerToken = localStorage.getItem("token");
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const bearerToken = localStorage.getItem("token");
+
     // const formData = new FormData();
     // formData.append("image", image);
 
@@ -56,7 +56,10 @@ function CreatePostPage() {
             />
           </div>
           <div className="p-2 d-flex flex-column w-75">
-            <label className="form-label display-6 text-secondary ">
+            <label
+              className="form-label display-6 text-secondary "
+              style={{ color: "#E2D6D6" }}
+            >
               Article
             </label>
             <textarea
@@ -81,7 +84,11 @@ function CreatePostPage() {
             />
           </div> */}
           <div className="p-2 d-flex justify-content-start w-75">
-            <button type="submit" className=" btn btn-primary w-50">
+            <button
+              type="submit"
+              className=" btn  w-25 text-white"
+              style={{ backgroundColor: "#9B6262" }}
+            >
               Create
             </button>
           </div>

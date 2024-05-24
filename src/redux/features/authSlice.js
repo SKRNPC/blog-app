@@ -14,6 +14,7 @@ export const authSlice = createSlice({
     },
     logout: (state) => {
       localStorage.removeItem("isAuthenticated");
+      localStorage.removeItem("postId");
       state.isAuthenticated = false;
     },
   },

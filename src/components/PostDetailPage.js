@@ -2,6 +2,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
+import CreateComment from "./CreateComment";
+import defaultImage from "../images/default-img.jpg";
+import bg from "../images/blog-img.png";
 
 function PostDetailPage() {
   const { id } = useParams();
@@ -19,32 +22,55 @@ function PostDetailPage() {
       day: "numeric",
     });
   }
+  const getPostDetail = async () => {
+    try {
+      const response = await axios.get(
+        `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog?id=${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${bearerToken}`,
+          },
+        }
+      );
+      console.log("res", response.data);
+      setPost(response.data);
+      console.log("se", post);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  const getComment = async () => {
+    try {
+      const response = await axios.get(
+        `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog/comments?comment_id=${id}`,
+        {
+          headers: {
+            Authorization: `Bearer ${bearerToken}`,
+          },
+        }
+      );
+      console.log("a", response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
   useEffect(() => {
-    const getPostDetail = async () => {
-      try {
-        const response = await axios.get(
-          `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog?id=${id}`,
-          {
-            headers: {
-              Authorization: `Bearer ${bearerToken}`,
-            },
-          }
-        );
-        console.log("res", response.data);
-        setPost(response.data);
-        console.log("se", post);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getPostDetail();
-  }, [bearerToken, id, post]);
+    getComment();
+  }, []);
 
   return (
     <>
-      <div className="bg-secondary col-9 mx-auto d-flex justify-content-start p-4 ">
-        <div className="bg-light w-75 p-5">
+      <div className="bg-primary col-8 mx-auto d-flex justify-content-center  ">
+        <div className="bg-light w-100 p-5">
+          <img
+            src={post.blog_name === "Pikaçu" ? defaultImage : post.image || bg}
+            alt="Görüntü"
+            className="ms-sm-1 element order-sm-2 order-1"
+            style={{ width: "100%" }}
+          />
+
           <div className=" d-flex flex-column align-items-center">
             <p className="display-5 ps-2 d-flex justify-content-center text-center">
               {post.blog_name}
@@ -59,6 +85,11 @@ function PostDetailPage() {
             </div>
           </div>
           <p className="lead text-dark p-2">{post.article}</p>
+          <CreateComment
+            blog_name={post.blog_name}
+            article={post.article}
+            id={id}
+          />
         </div>
       </div>
     </>

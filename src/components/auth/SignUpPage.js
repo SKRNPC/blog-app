@@ -38,9 +38,9 @@ function SignUp() {
 
   return (
     <>
-      <form onSubmit={(e) => handleSubmit(e)} className="p-xl-5 p-md-2 p-sm-0">
-        <div className="d-flex flex-column text-center justify-content-center pb-4 ">
-          <h2>Sign Up</h2>
+      <form onSubmit={(e) => handleSubmit(e)} className="p-xl-2 p-md-2 p-sm-0">
+        <div className="d-flex flex-column text-center   justify-content-center pb-4 ">
+          <h2 className="display-6">Sign Up</h2>
           <p className="mb-1 text-sm-center ">Create your account</p>
         </div>
         <div className="col">
@@ -49,9 +49,11 @@ function SignUp() {
             <input
               value={username}
               type="text"
-              className="form-control form-control-lg custom-input ms-2 rounded-0 "
+              className="form-control form-control-lg ms-2 rounded-3 border border-dark"
               placeholder="Username"
-              style={{ backgroundColor: "#E2D6D6" }}
+              style={{
+                backgroundColor: "transparent",
+              }}
               onChange={(e) => setUsername(e.target.value)}
             />
           </div>
@@ -60,24 +62,26 @@ function SignUp() {
             <input
               value={email}
               type="email"
-              className="form-control form-control-lg custom-input ms-2 rounded-0 "
+              className="form-control form-control-lg  ms-2 rounded-3 border border-dark "
               placeholder="Email"
-              style={{ backgroundColor: "#E2D6D6" }}
+              style={{
+                backgroundColor: "transparent",
+              }}
               onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div className="mb-4 mx-3 d-flex flex-row align-items-center">
             <PasswordSvg />
             <div
-              className="d-flex flex-row align-items-center ms-2 "
-              style={{ backgroundColor: "#E2D6D6", width: "100%" }}
+              className="d-flex flex-row align-items-center ms-2 border border-dark rounded-3 "
+              style={{ backgroundColor: "transparent", width: "100%" }}
             >
               <input
                 value={password}
                 type={isVisible ? "text" : "password"}
-                className="form-control form-control-lg custom-input rounded-0 "
+                className="form-control form-control-lg  rounded-3 "
                 placeholder="Password"
-                style={{ backgroundColor: "#E2D6D6", border: "none" }}
+                style={{ backgroundColor: "transparent", border: "none" }}
                 onChange={(event) => setPassword(event.target.value)}
               />
               <div
@@ -92,7 +96,7 @@ function SignUp() {
           <div className="mx-3 mb-2 d-flex justify-content-end">
             <button
               type="submit"
-              className="btn btn-lg  text-white rounded-0 "
+              className="btn btn-lg  text-white "
               style={{ backgroundColor: "#9B6262", width: "100%" }}
             >
               Sign Up

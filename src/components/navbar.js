@@ -1,9 +1,7 @@
-import Navbar from "react-bootstrap/Navbar";
-import Nav from "react-bootstrap/Nav";
-import SearchBar from "./search-bar";
 import { useDispatch } from "react-redux";
 import { logout } from "../redux/features/authSlice";
 import { useSelector } from "react-redux";
+import SearchBar from "./search-bar";
 function NavBar({ children }) {
   const { isAuthenticated } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
@@ -12,60 +10,71 @@ function NavBar({ children }) {
 
     localStorage.removeItem("token");
   };
-  console.log(isAuthenticated);
+
   return (
     <>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        style={{ backgroundColor: "#6cd9a6" }}
-        variant="dark"
-        className=" p-2"
-      >
-        <Navbar.Brand href="/" className="text-dark p-4">
-          Home
-        </Navbar.Brand>
-
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <div className="p-2">
-            <SearchBar />
+      <nav className="navbar navbar-expand-lg bg-light">
+        <div className="container-fluid">
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <a className="navbar-brand p-2" href="/" style={{ color: "#9b6262" }}>
+            Home
+          </a>
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <div className="d-flex flex-grow-1 justify-content-center">
+              <SearchBar />
+            </div>
+            <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+              {isAuthenticated ? (
+                <>
+                  <li className="nav-item">
+                    <a className="nav-link active" href="/create">
+                      Blog yaz
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/home" onClick={handleLogout}>
+                      Logout
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/profile">
+                      Profile
+                    </a>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/create">
+                      Blog yaz
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/login">
+                      Login
+                    </a>
+                  </li>
+                  <li className="nav-item">
+                    <a className="nav-link" href="/signup">
+                      Sign up
+                    </a>
+                  </li>
+                </>
+              )}
+            </ul>
           </div>
-
-          <Nav className="ms-auto p-3 ">
-            {isAuthenticated ? (
-              <>
-                <Nav.Link href="/create" className="text-dark ">
-                  Blog yaz
-                </Nav.Link>
-                <Nav.Link
-                  eventKey={3}
-                  href="/home"
-                  onClick={handleLogout}
-                  className="text-dark "
-                >
-                  Logout
-                </Nav.Link>
-                <Nav.Link eventKey={4} href="/profile" className="text-dark ">
-                  Profile
-                </Nav.Link>
-              </>
-            ) : (
-              <>
-                <Nav.Link href="/create" className="text-dark ">
-                  Blog yaz
-                </Nav.Link>
-                <Nav.Link href="/login" className="text-dark ">
-                  Login
-                </Nav.Link>
-                <Nav.Link eventKey={2} href="/signup" className="text-dark ">
-                  Sign up
-                </Nav.Link>
-              </>
-            )}
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+        </div>
+      </nav>
       <div>{children}</div>
     </>
   );

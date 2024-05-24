@@ -8,6 +8,7 @@ function UpdatePostPage() {
 
   const navigation = useNavigate();
   const id = localStorage.getItem("postId");
+  const bearerToken = localStorage.getItem("token");
 
   useEffect(() => {
     // Post verilerini almak için ID'yi kullan
@@ -33,7 +34,7 @@ function UpdatePostPage() {
 
   const updatePost = async (e) => {
     e.preventDefault();
-    const bearerToken = localStorage.getItem("token");
+
     const payload = {
       blog_name: name,
       article: article,
@@ -87,8 +88,12 @@ function UpdatePostPage() {
             />
           </div>
           <div className="p-2 d-flex justify-content-start w-75">
-            <button type="submit" className=" btn btn-primary w-50">
-              Update
+            <button
+              type="submit"
+              className=" btn  w-25 text-white"
+              style={{ backgroundColor: "#9B6262" }}
+            >
+              Create
             </button>
           </div>
         </form>
