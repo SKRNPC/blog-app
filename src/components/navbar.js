@@ -15,21 +15,22 @@ function NavBar({ children }) {
     <>
       <nav className="navbar navbar-expand-lg bg-light">
         <div className="container-fluid">
+          <a className="navbar-brand p-2" href="/" style={{ color: "#9b6262" }}>
+            Home
+          </a>
           <button
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
-            data-bs-target="#navbarTogglerDemo03"
-            aria-controls="navbarTogglerDemo03"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
             <span className="navbar-toggler-icon"></span>
           </button>
-          <a className="navbar-brand p-2" href="/" style={{ color: "#9b6262" }}>
-            Home
-          </a>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo03">
+
+          <div className="collapse navbar-collapse" id="navbarTogglerDemo02">
             <div className="d-flex flex-grow-1 justify-content-center">
               <SearchBar />
             </div>
