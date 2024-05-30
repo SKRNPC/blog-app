@@ -5,16 +5,8 @@ function CreateBloggerPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  useEffect(() => {
-    // Admin token'ı tanımla
-    const adminToken =
-      "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE1MTAwMDcyLCJpYXQiOjE3MTUwNzg0NzIsImp0aSI6IjVhMDhjOGRlNjZiYzQ0ZDBiMzJlOTg3YmIwNjFjOWZhIiwidXNlcl9pZCI6MTR9.q07IW1WVCrKm_KFG3vCpJ-H1WRftkoe-P_2K-LARTyo";
 
-    // Token'ı localStorage'a ekle
-    localStorage.setItem("adminToken", adminToken);
-  }, []);
-
-  const bearerToken = localStorage.getItem("adminToken");
+  const bearerToken = localStorage.getItem("token");
   console.log(bearerToken);
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -27,7 +19,7 @@ function CreateBloggerPage() {
     };
     try {
       const response = await axios.post(
-        "https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog",
+        "https://last-samurai-487ac5fe23f0.herokuapp.com/administration/blogger",
         payload,
         {
           headers: {
@@ -40,6 +32,25 @@ function CreateBloggerPage() {
       console.log(error);
     }
   };
+  const getPostDetail = async () => {
+    try {
+      const response = await axios.get(
+        `https://last-samurai-487ac5fe23f0.herokuapp.com/administration/blogger/blogs_waiting`,
+        {
+          headers: {
+            Authorization: `Bearer ${bearerToken}`,
+          },
+        }
+      );
+      console.log("res", response.data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+  useEffect(() => {
+    getPostDetail();
+  }, []);
+
   return (
     <>
       <form

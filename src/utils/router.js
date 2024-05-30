@@ -8,9 +8,9 @@ import MyPost from "../pages/my-post";
 import CreatePost from "../pages/create-post";
 import UpdatePost from "../pages/update-post";
 import PostDetail from "../pages/post-detail";
-import CreateBloggerPage from "../components/admin/CreateBloggerPage";
 import UpdateBlogger from "../pages/update-blogger";
 import CreateBlogger from "../pages/create-blogger";
+import Blogger from "../pages/blogger";
 
 export const router = createBrowserRouter([
   {
@@ -54,7 +54,11 @@ export const router = createBrowserRouter([
     element: <CreateBlogger />,
   },
   {
-    path: "/update/blogger",
+    path: "/update/blogger/:id",
     element: <UpdateBlogger />,
+  },
+  {
+    path: "/blogger",
+    element: <Blogger />,
   },
 ]);

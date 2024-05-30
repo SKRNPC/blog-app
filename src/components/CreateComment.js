@@ -9,8 +9,6 @@ function CreateComment({ blog_name, article, id }) {
 
     const payload = {
       comments,
-      blog_name,
-      article,
     };
     try {
       const response = await axios.post(
@@ -33,6 +31,7 @@ function CreateComment({ blog_name, article, id }) {
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="mb-3">
             <textarea
+              type="text"
               className="form-control"
               rows="3"
               value={comments}

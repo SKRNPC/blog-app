@@ -11,6 +11,7 @@ function PostDetailPage() {
   const [post, setPost] = useState("");
   const bearerToken = localStorage.getItem("token");
   const { isAuthenticated } = useSelector((state) => state.auth);
+  const [comment, setComment] = useState("");
   function formatDate(dateString) {
     const date = new Date(dateString);
     if (isNaN(date)) {
@@ -42,14 +43,15 @@ function PostDetailPage() {
   const getComment = async () => {
     try {
       const response = await axios.get(
-        `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog/comments?comment_id=${id}`,
+        `https://last-samurai-487ac5fe23f0.herokuapp.com/blogger/blog/comments?blog_id=${id}`,
         {
           headers: {
             Authorization: `Bearer ${bearerToken}`,
           },
         }
       );
-      console.log("a", response.data);
+
+      setComment(response.data);
     } catch (error) {
       console.log(error);
     }
@@ -58,6 +60,7 @@ function PostDetailPage() {
   useEffect(() => {
     getPostDetail();
     getComment();
+    console.log("b", comment);
   }, []);
 
   return (
@@ -85,6 +88,7 @@ function PostDetailPage() {
             </div>
           </div>
           <p className="lead text-dark p-2">{post.article}</p>
+          <p className="lead text-dark p-2">{comment.comments}</p>
           <CreateComment
             blog_name={post.blog_name}
             article={post.article}
