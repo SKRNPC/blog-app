@@ -1,59 +1,51 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ReactComponent as PenSvg } from "../../images/icons/pencil.svg";
-import { ReactComponent as DeleteSvg } from "../../images/icons/trash-simple.svg";
 import { useNavigate } from "react-router-dom";
+import { ReactComponent as PenSvg } from "../../images/icons/pencil.svg";
 
-function BloggerPage() {
-  const [bloggers, setBloggers] = useState([]);
+function WaitingArticlesPage() {
   const bearerToken = localStorage.getItem("token");
+  const [waitingArticles, setWaitingArticles] = useState([]);
   const navigation = useNavigate();
-  const handleClick = (id) => {
-    navigation(`/update/blogger/${id}`);
-  };
   const handleDetailClick = (id) => {
     // İstediğiniz URL'ye yönlendirin
-    navigation(`/blogger/detail/${id}`);
+    navigation(`/detail/${id}`);
   };
-  const getBlogger = async () => {
+  const handleClick = (id) => {
+    navigation("/update");
+  };
+  const truncateText = (text, wordLimit) => {
+    const words = text.split(" ");
+    if (words.length > wordLimit) {
+      return words.slice(0, wordLimit).join(" ") + " ...";
+    }
+    return text;
+  };
+  const getWaitingArticles = async () => {
     try {
       const response = await axios.get(
-        `https://last-samurai-487ac5fe23f0.herokuapp.com/administration/blogger`,
+        `https://last-samurai-487ac5fe23f0.herokuapp.com/administration/blogger/blogs_waiting`,
         {
           headers: {
             Authorization: `Bearer ${bearerToken}`,
           },
         }
       );
-      console.log(response.data);
-      setBloggers(response.data);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-  const handleDelete = async (id) => {
-    try {
-      await axios.delete(
-        `https://last-samurai-487ac5fe23f0.herokuapp.com/administration/blogger?id=${id}`,
-        {
-          headers: {
-            Authorization: `Bearer ${bearerToken}`,
-          },
-        }
-      );
-      setBloggers(bloggers.filter((blogger) => blogger.id !== id));
+      console.log("res", response.data);
+      setWaitingArticles(response.data);
+      console.log("se", waitingArticles);
     } catch (error) {
       console.log(error);
     }
   };
   useEffect(() => {
-    getBlogger();
+    getWaitingArticles();
   }, []);
 
   return (
     <div className=" min-vh-100 bg-image-home align-items-baseline p-5">
       <div className="d-flex flex-column align-items-center ">
-        {bloggers.map((blogger) => (
+        {waitingArticles.map((article) => (
           <div
             className="col-11 col-md-10 col-lg-9 col-xl-8 my-3"
             style={{ backgroundColor: "#fff8f5" }}
@@ -62,31 +54,27 @@ function BloggerPage() {
               <div className=" d-flex flex-column justify-content-between  w-100 order-sm-1 order-2 ">
                 <div className="d-flex flex-row justify-content-between">
                   <div className="col d-flex flex-row justify-content-between  align-items-center p-sm-2 p-md-2 p-1 fw-bolder ">
-                    <h3 className="m-0 display-6 ">{blogger.username}</h3>
+                    <h3 className="m-0 display-6 ">{article.blog_name}</h3>
                     <div>
                       <button
+                        onClick={() => handleClick(waitingArticles.id)}
                         className="btn"
-                        onClick={() => handleClick(blogger.id)}
                       >
                         <PenSvg />
-                      </button>
-                      <button
-                        className="btn"
-                        onClick={() => handleDelete(blogger.id)}
-                      >
-                        <DeleteSvg />
                       </button>
                     </div>
                   </div>
                 </div>
                 <div className="col d-flex align-items-center  p-md-3 p-sm-3 p-2 ">
-                  <p className="font m-0">{blogger.waiting_blogs}</p>
+                  <p className="font m-0">
+                    {truncateText(article.article, 20)}
+                  </p>
                 </div>
                 <div className="p-md-3 p-sm-2 p-1 ">
                   <button
+                    onClick={() => handleDetailClick(article.id)}
                     className="btn d-flex text-white fw-bold rounded-0 justify-content-center "
                     style={{ backgroundColor: "#9B6262", width: "150px" }}
-                    onClick={() => handleDetailClick(blogger.id)}
                   >
                     Read More
                   </button>
@@ -100,4 +88,4 @@ function BloggerPage() {
   );
 }
 
-export default BloggerPage;
+export default WaitingArticlesPage;

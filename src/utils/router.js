@@ -12,6 +12,7 @@ import UpdateBlogger from "../pages/update-blogger";
 import CreateBlogger from "../pages/create-blogger";
 import Blogger from "../pages/blogger";
 import BloggerDetail from "../pages/blogger-detail";
+import WaitingArticles from "../pages/waiting-articles";
 
 export const router = createBrowserRouter([
   {
@@ -65,5 +66,9 @@ export const router = createBrowserRouter([
   {
     path: "/blogger/detail/:id",
     element: <BloggerDetail />,
+  },
+  {
+    path: "/articles",
+    element: <WaitingArticles />,
   },
 ]);
