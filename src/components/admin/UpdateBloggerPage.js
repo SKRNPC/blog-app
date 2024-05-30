@@ -5,7 +5,6 @@ import { useParams } from "react-router-dom";
 function UpdateBloggerPage() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
   const { id } = useParams();
 
@@ -21,8 +20,9 @@ function UpdateBloggerPage() {
             },
           }
         );
-        setUsername(response.data.blog_name);
-        setEmail(response.data.article);
+        console.log("blog", response);
+        setUsername(response.data.username);
+        setEmail(response.data.email);
       } catch (error) {
         console.log(error);
       }
@@ -48,7 +48,6 @@ function UpdateBloggerPage() {
           },
         }
       );
-      localStorage.removeItem("postId");
     } catch (error) {
       console.log(error);
     }
@@ -74,13 +73,6 @@ function UpdateBloggerPage() {
           onChange={(e) => setEmail(e.target.value)}
           className="form-control form-control-lg border border-black"
           value={email}
-          style={{ background: "transparent" }}
-        />
-        <input
-          placeholder="password"
-          onChange={(e) => setPassword(e.target.value)}
-          className="form-control form-control-lg border border-black"
-          value={password}
           style={{ background: "transparent" }}
         />
         <button
