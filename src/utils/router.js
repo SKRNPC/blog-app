@@ -13,6 +13,7 @@ import CreateBlogger from "../pages/create-blogger";
 import Blogger from "../pages/blogger";
 import BloggerDetail from "../pages/blogger-detail";
 import WaitingArticles from "../pages/waiting-articles";
+import ArticlesDetail from "../pages/articles-detail";
 
 export const router = createBrowserRouter([
   {
@@ -70,5 +71,9 @@ export const router = createBrowserRouter([
   {
     path: "/articles",
     element: <WaitingArticles />,
+  },
+  {
+    path: "/articles/detail/:id",
+    element: <ArticlesDetail />,
   },
 ]);

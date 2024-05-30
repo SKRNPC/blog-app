@@ -9,7 +9,7 @@ function WaitingArticlesPage() {
   const navigation = useNavigate();
   const handleDetailClick = (id) => {
     // İstediğiniz URL'ye yönlendirin
-    navigation(`/detail/${id}`);
+    navigation(`/articles/detail/${id}`);
   };
   const handleClick = (id) => {
     navigation("/update");

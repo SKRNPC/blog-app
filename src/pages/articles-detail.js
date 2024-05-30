@@ -1,7 +1,14 @@
+import ArticlesDetailPage from "../components/admin/ArticlesDetailPage";
+import NavBar from "../components/navbar";
+
 function ArticlesDetail() {
   return (
     <>
-      <div></div>
+      <div>
+        <NavBar>
+          <ArticlesDetailPage />
+        </NavBar>
+      </div>
     </>
   );
 }
