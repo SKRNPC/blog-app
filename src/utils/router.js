@@ -11,6 +11,7 @@ import PostDetail from "../pages/post-detail";
 import UpdateBlogger from "../pages/update-blogger";
 import CreateBlogger from "../pages/create-blogger";
 import Blogger from "../pages/blogger";
+import BloggerDetail from "../pages/blogger-detail";
 
 export const router = createBrowserRouter([
   {
@@ -60,5 +61,9 @@ export const router = createBrowserRouter([
   {
     path: "/blogger",
     element: <Blogger />,
+  },
+  {
+    path: "/blogger/detail/:id",
+    element: <BloggerDetail />,
   },
 ]);

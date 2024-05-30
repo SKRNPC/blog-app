@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { ReactComponent as PenSvg } from "../images/icons/pencil.svg";
-import { ReactComponent as DeleteSvg } from "../images/icons/trash-simple.svg";
+import { ReactComponent as PenSvg } from "../../images/icons/pencil.svg";
+import { ReactComponent as DeleteSvg } from "../../images/icons/trash-simple.svg";
 import { useNavigate } from "react-router-dom";
 
 function BloggerPage() {
@@ -10,6 +10,10 @@ function BloggerPage() {
   const navigation = useNavigate();
   const handleClick = (id) => {
     navigation(`/update/blogger/${id}`);
+  };
+  const handleDetailClick = (id) => {
+    // İstediğiniz URL'ye yönlendirin
+    navigation(`/blogger/detail/${id}`);
   };
   const getBlogger = async () => {
     try {
@@ -82,6 +86,7 @@ function BloggerPage() {
                   <button
                     className="btn d-flex text-white fw-bold rounded-0 justify-content-center "
                     style={{ backgroundColor: "#9B6262", width: "150px" }}
+                    onClick={() => handleDetailClick(blogger.id)}
                   >
                     Read More
                   </button>

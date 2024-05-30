@@ -1,4 +1,4 @@
-import BloggerPage from "../components/BloggerPage";
+import BloggerPage from "../components/admin/BloggerPage";
 import NavBar from "../components/navbar";
 
 function Blogger() {
