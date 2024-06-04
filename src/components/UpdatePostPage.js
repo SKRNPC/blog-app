@@ -50,7 +50,7 @@ function UpdatePostPage() {
         }
       );
       localStorage.removeItem("postId");
-      navigation("/login/post");
+      navigation("/mypost");
     } catch (error) {
       console.log(error);
     }

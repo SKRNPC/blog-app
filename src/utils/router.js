@@ -14,11 +14,16 @@ import Blogger from "../pages/blogger";
 import BloggerDetail from "../pages/blogger-detail";
 import WaitingArticles from "../pages/waiting-articles";
 import ArticlesDetail from "../pages/articles-detail";
+import ActivePosts from "../pages/active-posts";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: <Home />,
+  },
+  {
+    path: "/home",
+    element: <ActivePosts />,
   },
   {
     path: "/signup",
@@ -37,7 +42,7 @@ export const router = createBrowserRouter([
     element: <NavBar />,
   },
   {
-    path: "/login/post",
+    path: "/mypost",
     element: <MyPost />,
   },
   {

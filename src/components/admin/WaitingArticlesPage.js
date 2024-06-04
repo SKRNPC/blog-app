@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ReactComponent as PenSvg } from "../../images/icons/pencil.svg";
 
 function WaitingArticlesPage() {
   const bearerToken = localStorage.getItem("token");
@@ -11,9 +10,7 @@ function WaitingArticlesPage() {
     // İstediğiniz URL'ye yönlendirin
     navigation(`/articles/detail/${id}`);
   };
-  const handleClick = (id) => {
-    navigation("/update");
-  };
+
   const truncateText = (text, wordLimit) => {
     const words = text.split(" ");
     if (words.length > wordLimit) {
@@ -55,14 +52,6 @@ function WaitingArticlesPage() {
                 <div className="d-flex flex-row justify-content-between">
                   <div className="col d-flex flex-row justify-content-between  align-items-center p-sm-2 p-md-2 p-1 fw-bolder ">
                     <h3 className="m-0 display-6 ">{article.blog_name}</h3>
-                    <div>
-                      <button
-                        onClick={() => handleClick(waitingArticles.id)}
-                        className="btn"
-                      >
-                        <PenSvg />
-                      </button>
-                    </div>
                   </div>
                 </div>
                 <div className="col d-flex align-items-center  p-md-3 p-sm-3 p-2 ">

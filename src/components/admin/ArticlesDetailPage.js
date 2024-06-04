@@ -1,10 +1,10 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 
 function ArticlesDetailPage() {
   const { id } = useParams();
-
+  const navigation = useNavigate();
   const bearerToken = localStorage.getItem("token");
   const [post, setPost] = useState("");
   const getPostDetail = async () => {
@@ -19,6 +19,7 @@ function ArticlesDetailPage() {
       );
       console.log("res", response.data);
       setPost(response.data);
+
       console.log("se", post);
     } catch (error) {
       console.log(error);
@@ -39,6 +40,7 @@ function ArticlesDetailPage() {
       console.log(error);
     }
   };
+
   useEffect(() => {
     getPostDetail();
   }, []);
